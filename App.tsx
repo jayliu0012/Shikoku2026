@@ -682,39 +682,50 @@ const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> 
          {/* Preparation */}
          <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#2b6e90] mb-4">
             <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
-                📋 準備證件 Check List
+                📋 準備證件
             </h3>
             <ul className="list-disc list-outside ml-5 space-y-2 text-base text-[#757575]">
-                <li><span className="font-bold text-[#3c3c3c]">護照</span> (Passport)</li>
+                <li><span className="font-bold text-[#3c3c3c]">護照</span></li>
                 <li><span className="font-bold text-[#3c3c3c]">台灣駕照</span> (正本)</li>
                 <li><span className="font-bold text-[#3c3c3c]">駕照日文譯本</span> (正本)</li>
             </ul>
         </div>
 
-        {/* Traffic Light Rule - Emphasized */}
-        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#d15b47] mb-4">
-            <div className="flex items-start">
-                 <div className="mr-3 mt-1">
-                    <div className="flex space-x-1 mb-1">
-                        <div className="w-4 h-4 rounded-full bg-red-500"></div>
-                        <div className="w-4 h-4 rounded-full bg-yellow-400 opacity-30"></div>
-                        <div className="w-4 h-4 rounded-full bg-blue-400 opacity-30"></div>
-                    </div>
-                    <div className="flex space-x-1 justify-center">
-                         <div className="w-4 h-4 rounded-full bg-transparent"></div>
-                         <div className="w-4 h-4 rounded-full bg-transparent"></div>
-                         <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-[10px] text-white font-bold">➡</div>
-                    </div>
-                 </div>
-                 <div>
-                    <h3 className="text-lg font-bold text-[#3c3c3c] mb-1">紅燈 + 綠色箭頭</h3>
-                    <p className="text-base text-[#757575] leading-relaxed">
-                        當紅燈亮起，但下方有綠色方向指標時，<br/>
-                        <span className="font-bold text-[#d15b47]">可以依亮燈的方向指標行駛！</span>
-                    </p>
-                 </div>
+        {/* Rental Car Info - Added based on request */}
+        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#6366f1] mb-4">
+            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                🚙 租車預約資訊
+            </h3>
+            <div className="space-y-3 text-base text-[#3c3c3c]">
+                <div className="flex justify-between border-b border-gray-100 pb-2">
+                    <span className="font-bold text-[#757575]">租車公司</span>
+                    <span className="font-bold text-[#2b6e90]">平成租車 Heisei Car Rentals</span>
+                </div>
+                <div className="flex justify-between border-b border-gray-100 pb-2">
+                    <span className="font-bold text-[#757575]">預約號碼</span>
+                    <span className="font-mono text-[#d15b47]">20250812-2026-03-29-s1-0201</span>
+                </div>
+                 <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
+                    <span className="font-bold text-[#757575]">取車</span>
+                    <span>2026-03-29 11:30<br/><span className="text-base text-gray-500">高松車站前店</span></span>
+                    
+                    <span className="font-bold text-[#757575]">還車</span>
+                    <span>2026-04-04 14:30<br/><span className="text-base text-gray-500">高松車站前店</span></span>
+                </div>
+                <div className="bg-gray-50 p-2 rounded mt-2 space-y-1">
+                     <p><span className="font-bold text-[#757575] mr-2">車型:</span>(S1) 小型家庭用車</p>
+                     <p><span className="font-bold text-[#757575] mr-2">補償:</span>安心保障</p>
+                     <p><span className="font-bold text-[#757575] mr-2">選項:</span>中文導航、ETC卡</p>
+                     <p className="border-t border-gray-200 pt-1 mt-1 flex justify-between items-center">
+                        <span className="font-bold text-[#757575]">預估費用</span>
+                        <span className="font-bold text-lg text-[#d15b47]">¥ 56,430</span>
+                     </p>
+                </div>
+                <p className="text-sm text-[#48404D] mt-2">*ETC費用另計，將於最後一天還車時在店內結算</p>
             </div>
         </div>
+
+        
 
         {/* Speed Limits */}
         <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#98c187] mb-4">
@@ -726,7 +737,7 @@ const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> 
                  </div>
                  <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
                     <span className="font-medium text-[#3c3c3c]">一般道路</span>
-                    <span className="font-black text-xl text-blue-500 bg-white border-2 border-blue-500 rounded-full w-12 h-12 flex items-center justify-center text-sm">30~50</span>
+                    <span className="font-black text-xl text-blue-500 bg-white border-2 border-blue-500 rounded-full w-12 h-12 flex items-center justify-center text-sm">40</span>
                  </div>
                  <div className="flex justify-between items-center bg-gray-50 p-2 rounded border border-purple-200">
                     <span className="font-medium text-purple-700">ETC 收費站</span>
@@ -761,8 +772,8 @@ const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> 
              <h3 className="text-lg font-bold text-[#3c3c3c] mb-3">⚠️ 重要行車規則</h3>
              <ul className="space-y-4">
                 <li className="flex items-start">
-                    <div className="flex-shrink-0 w-8 h-8 bg-red-600 text-white font-bold text-xs flex items-center justify-center transform rotate-180" style={{clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)"}}>
-                        止まれ
+                    <div className="flex-shrink-0 w-8 h-8 bg-red-600 text-white font-bold text-xs flex items-center justify-center transform" style={{clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)"}}>
+                        止
                     </div>
                     <div className="ml-3">
                         <p className="font-bold text-[#3c3c3c]">遇到「止まれ」標誌</p>
@@ -788,6 +799,41 @@ const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> 
                      <div className="ml-3">
                         <p className="font-bold text-[#3c3c3c]">黃色實線</p>
                         <p className="text-sm text-[#757575]">禁止變換車道。</p>
+                     </div>
+                </li>
+                <li className="flex items-start">
+                     <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded text-white flex items-center justify-center text-sm font-bold">彎</div>
+                     <div className="ml-3">
+                        <p className="font-bold text-[#3c3c3c]">左轉小彎、右轉大彎</p>
+                        <p className="text-sm text-[#757575]">靠左行駛：左轉轉入近側車道(小彎)，右轉跨越至遠側車道(大彎)。</p>
+                     </div>
+                </li>
+                <li className="flex items-start">
+                     <div className="flex-shrink-0 w-8 h-8 bg-gray-700 rounded text-white flex items-center justify-center text-lg">🛣️</div>
+                     <div className="ml-3">
+                        <p className="font-bold text-[#3c3c3c]">開車時記得「抓中線」</p>
+                        <p className="text-sm text-[#757575]">右駕容易偏左，駕駛人應刻意靠路中央(中線)行駛，維持車身在車道內。</p>
+                     </div>
+                </li>
+                <li className="flex items-start">
+                     <div className="flex-shrink-0 w-8 h-8 bg-orange-500 rounded text-white flex items-center justify-center text-lg">🚶</div>
+                     <div className="ml-3">
+                        <p className="font-bold text-[#3c3c3c]">禮讓行人先行</p>
+                        <p className="text-sm text-[#757575]">行人絕對優先。轉彎時若斑馬線有行人，必須完全停止禮讓。</p>
+                     </div>
+                </li>
+                <li className="flex items-start">
+                     <div className="flex-shrink-0 w-8 h-8 bg-green-500 rounded text-white flex items-center justify-center text-lg">➡</div>
+                     <div className="ml-3">
+                        <p className="font-bold text-[#3c3c3c]">依綠色箭頭指示</p>
+                        <p className="text-sm text-[#757575]">即使主燈是紅燈，若下方綠色箭頭亮起，該方向車輛可通行。</p>
+                     </div>
+                </li>
+                 <li className="flex items-start">
+                     <div className="flex-shrink-0 w-8 h-8 bg-purple-500 rounded text-white flex items-center justify-center text-lg">🖐️</div>
+                     <div className="ml-3">
+                        <p className="font-bold text-[#3c3c3c]">雨刷左・方向燈右</p>
+                        <p className="text-sm text-[#757575]">操作桿位置與台灣相反：方向燈在右側，雨刷在左側。</p>
                      </div>
                 </li>
              </ul>
