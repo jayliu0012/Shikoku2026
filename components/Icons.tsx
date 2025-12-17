@@ -218,3 +218,30 @@ export const MusicIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <circle cx="18" cy="16" r="3"></circle>
   </svg>
 );
+
+export const ActivityIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+  </svg>
+);
+
+export const LifeBuoyIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+    <circle cx="12" cy="12" r="4"></circle>
+    <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
+    <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line>
+    <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line>
+    <line x1="14.83" y1="9.17" x2="18.36" y2="5.64"></line>
+    <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line>
+  </svg>
+);
+
+export const CarIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
+    <circle cx="7" cy="17" r="2"></circle>
+    <circle cx="17" cy="17" r="2"></circle>
+    <path d="M5 17h7"></path>
+  </svg>
+);

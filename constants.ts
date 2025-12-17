@@ -80,7 +80,7 @@ export const flightData: FlightData = {
         type: "回程 (Inbound)",
         date: "2026/04/05 (日)",
         departure: { time: "14:00", city: "OSA/大阪", airport: "關西國際機場", terminal: "T1" },
-        arrival: { time: "15:55", city: "TPE/桃園", airport: "臺灣桃園國際機場", terminal: "T2" },
+        arrival: { time: "16:00", city: "TPE/桃園", airport: "臺灣桃園國際機場", terminal: "T2" },
         airline: "中華航空",
         flightNumber: "CI153",
         duration: "2小時55分",
@@ -1223,5 +1223,50 @@ export const itineraryData: ItineraryDay[] = [
             }
         ]
     },
-    { day: 9, date: "2026/04/05", theme: "台灣", color: "border-[#2b6e90]", highlight: "上午彈性活動時間增加！14:00 KIX → 15:55 TPE。", stops: [] },
+    { 
+        day: 9, 
+        date: "2026/04/05", 
+        theme: "台灣", 
+        color: "border-[#2b6e90]", 
+        highlight: "上午彈性活動時間增加！14:00 KIX → 15:55 TPE。", 
+        stops: [
+            {
+                time: "09:00",
+                name: "大阪難波ELLY-one",
+                durationLabel: "",
+                transport: { mode: "🚶", time: "8分" },
+                category: "🛏️"
+            },
+            {
+                time: "09:15",
+                name: "南海難波",
+                durationLabel: "",
+                mapUrl: "https://maps.app.goo.gl/FqjshYKq5CnPxBDT7",
+                note: "備註：\n📝南海空港線：南海難波>関西空港(11站)\n💴¥970",
+                transport: { mode: "🚇", time: "54分" },
+                category: "🚉"
+            },
+            {
+                time: "10:09",
+                name: "関西空港駅",
+                durationLabel: "",
+                transport: { mode: "🚶", time: "10分" },
+                category: "🚉"
+            },
+            {
+                time: "14:00",
+                name: "関西国際空港",
+                durationLabel: "",
+                note: "備註：\n📝中華航空_CI153",
+                transport: { mode: "✈️", time: "2hr" },
+                category: "🛫"
+            },
+            {
+                time: "16:00",
+                name: "臺灣桃園國際機場",
+                durationLabel: "",
+                category: "🛬"
+            }
+        ] 
+    },
 ];

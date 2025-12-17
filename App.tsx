@@ -5,7 +5,7 @@ import {
   CheckIcon, SquareIcon, LuggageIcon, BatteryIcon, HomeIcon, ClockIcon, LocationIcon,
   TrainIcon, UtensilsIcon, ShoppingBagIcon, TicketIcon, BedIcon,
   FuelIcon, ParkingIcon, CameraIcon, ShrineIcon, MailIcon, HotSpringIcon,
-  BusIcon, ShipIcon, CableCarIcon, MusicIcon
+  BusIcon, ShipIcon, CableCarIcon, MusicIcon, ActivityIcon, LifeBuoyIcon, CarIcon
 } from './components/Icons';
 import { 
   initialPackingList, 
@@ -100,7 +100,7 @@ const DayDetail: React.FC<{ dayData: ItineraryDay; onBack: () => void }> = ({ da
                          <span className={`text-4xl font-black mr-3 ${color.replace('border-', 'text-')}`}>
                              DAY {day}
                          </span>
-                         <span className="text-[#757575] font-bold">{date}</span>
+                         <span className="text-[#757575] font-bold text-base">{date}</span>
                     </div>
                     
                     <h2 className="text-2xl font-bold text-[#3c3c3c] mb-6 border-b border-gray-100 pb-4">
@@ -246,6 +246,13 @@ const DayDetail: React.FC<{ dayData: ItineraryDay; onBack: () => void }> = ({ da
                     </div>
                 </div>
             </div>
+            <button 
+                onClick={onBack} 
+                className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+            >
+                <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+                返回行程總覽
+            </button>
         </div>
     );
 };
@@ -336,6 +343,13 @@ const FlightContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ s
         
         <FlightCard flight={flightData.outbound} />
         <FlightCard flight={flightData.inbound} />
+        <button 
+            onClick={() => setSubView(null)} 
+            className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+        >
+            <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+            返回選單
+        </button>
     </div>
 );
 
@@ -406,8 +420,479 @@ const AccommodationContent: React.FC<{ setSubView: (v: string | null) => void }>
                 </div>
             ))}
         </div>
+        <button 
+            onClick={() => setSubView(null)} 
+            className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+        >
+            <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+            返回選單
+        </button>
     </div>
 );
+
+const WorshipGuideContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => (
+    <div className="p-4 max-w-lg mx-auto">
+        <button
+            onClick={() => setSubView(null)}
+            className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-base"
+        >
+            <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+            返回選單
+        </button>
+
+        <h2 className="text-2xl font-extrabold text-[#3c3c3c] mb-6 flex items-center">
+            ⛩️ 參拜禮儀指南
+        </h2>
+
+        {/* Introduction */}
+        <div className="bg-white rounded-xl shadow-md p-6 mb-6 border-l-4 border-[#d15b47]">
+             <h3 className="text-lg font-bold text-[#3c3c3c] mb-2">二禮二拍手一禮</h3>
+             <p className="text-[#757575] text-base leading-relaxed">
+                這是日本神社最常見的參拜方式（神道教）。<br/>
+                前往金刀比羅宮、高屋神社等神社時請參考。
+             </p>
+        </div>
+
+        {/* Steps Container */}
+        <div className="space-y-6">
+
+            {/* Step 1: Torii */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+                <div className="bg-[#f0f4f6] px-4 py-2 border-b border-gray-100 flex items-center">
+                    <span className="bg-[#d15b47] text-white text-xs font-bold px-2 py-1 rounded mr-2">STEP 1</span>
+                    <span className="font-bold text-[#3c3c3c]">鳥居 (Torii)</span>
+                </div>
+                <div className="p-4">
+                    <ul className="list-disc list-outside ml-4 space-y-2 text-base text-[#3c3c3c]">
+                        <li><span className="font-bold">入內前：</span>在鳥居前輕輕一鞠躬，以示敬意。</li>
+                        <li><span className="font-bold">行走時：</span>請走在參道的兩側，中間（正中）是神明的通道。</li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* Step 2: Chozuya */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+                <div className="bg-[#f0f4f6] px-4 py-2 border-b border-gray-100 flex items-center">
+                    <span className="bg-[#2b6e90] text-white text-xs font-bold px-2 py-1 rounded mr-2">STEP 2</span>
+                    <span className="font-bold text-[#3c3c3c]">手水舍 (淨身)</span>
+                </div>
+                <div className="p-4 space-y-3">
+                    <div className="flex items-start">
+                        <span className="text-lg mr-2">💧</span>
+                        <p className="text-base text-[#3c3c3c]">右手拿勺子盛水，清洗<span className="font-bold text-[#2b6e90]">左手</span>。</p>
+                    </div>
+                    <div className="flex items-start">
+                        <span className="text-lg mr-2">💧</span>
+                        <p className="text-base text-[#3c3c3c]">換左手拿勺子，清洗<span className="font-bold text-[#2b6e90]">右手</span>。</p>
+                    </div>
+                    <div className="flex items-start">
+                        <span className="text-lg mr-2">👄</span>
+                        <p className="text-base text-[#3c3c3c]">右手拿勺子倒水在<span className="font-bold text-[#2b6e90]">左手掌心</span>，以口接水漱口（請勿直接以口對勺）。</p>
+                    </div>
+                    <div className="flex items-start">
+                        <span className="text-lg mr-2">🤲</span>
+                        <p className="text-base text-[#3c3c3c]">再次清洗左手。</p>
+                    </div>
+                    <div className="flex items-start">
+                        <span className="text-lg mr-2">🔄</span>
+                        <p className="text-base text-[#3c3c3c]">將勺子立起，用剩餘的水清洗勺柄，放回原處。</p>
+                    </div>
+                </div>
+            </div>
+
+             {/* Step 3: Worship */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+                <div className="bg-[#f0f4f6] px-4 py-2 border-b border-gray-100 flex items-center">
+                    <span className="bg-[#f1be42] text-white text-xs font-bold px-2 py-1 rounded mr-2">STEP 3</span>
+                    <span className="font-bold text-[#3c3c3c]">本殿參拜</span>
+                </div>
+                <div className="p-4 space-y-4">
+                     <div className="flex items-center bg-gray-50 p-3 rounded-lg">
+                        <span className="text-2xl mr-3">💰</span>
+                        <div>
+                            <p className="font-bold text-[#3c3c3c] text-sm">1. 賽錢 (Saisen)</p>
+                            <p className="text-base text-[#757575]">輕輕投入香油錢（通常5円象徵結緣）。</p>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center bg-gray-50 p-3 rounded-lg">
+                        <span className="text-2xl mr-3">🔔</span>
+                        <div>
+                            <p className="font-bold text-[#3c3c3c] text-base">2. 搖鈴</p>
+                            <p className="text-base text-[#757575]">若有鈴鐺，用力搖響以呼喚神明。</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center bg-gray-50 p-3 rounded-lg">
+                        <span className="text-2xl mr-3">🙇</span>
+                        <div>
+                            <p className="font-bold text-[#3c3c3c] text-base">3. 二禮</p>
+                            <p className="text-base text-[#757575]">深深鞠躬兩次。</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center bg-gray-50 p-3 rounded-lg">
+                        <span className="text-2xl mr-3">👏</span>
+                        <div>
+                            <p className="font-bold text-[#3c3c3c] text-base">4. 二拍手</p>
+                            <p className="text-base text-[#757575]">拍手兩次。</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center bg-gray-50 p-3 rounded-lg">
+                        <span className="text-2xl mr-3">💭</span>
+                        <div>
+                            <p className="font-bold text-[#3c3c3c] text-base">5. 祈願</p>
+                            <p className="text-base text-[#757575]">在心裡默念願望。</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center bg-gray-50 p-3 rounded-lg">
+                        <span className="text-2xl mr-3">👏</span>
+                        <div>
+                            <p className="font-bold text-[#3c3c3c] text-base">6. 一禮</p>
+                            <p className="text-base text-[#757575]">最後深深鞠躬一次。</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <button
+            onClick={() => setSubView(null)}
+            className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-base"
+        >
+            <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+            返回選單
+        </button>
+    </div>
+);
+
+const SurvivalGuideContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => (
+    <div className="p-4 max-w-lg mx-auto">
+        <button
+            onClick={() => setSubView(null)}
+            className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+        >
+            <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+            返回選單
+        </button>
+
+        <h2 className="text-2xl font-extrabold text-[#3c3c3c] mb-6 flex items-center">
+            🆘 生存指南注意事項
+        </h2>
+
+        {/* Postcards */}
+        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#d15b47] mb-4">
+            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                📮 明信片 | 郵資
+            </h3>
+            <ul className="list-disc list-outside ml-4 space-y-2 text-base text-[#757575]">
+                <li><span className="font-bold text-[#3c3c3c]">郵資：</span>¥100 (國際明信片)</li>
+                <li><span className="font-bold text-[#3c3c3c]">郵便局：</span>需要抽號碼牌，櫃台可索取紀念戳章。</li>
+                <li><span className="font-bold text-[#3c3c3c]">郵筒：</span>機場、街道都有，請投左邊【手紙・はがき】專用口。</li>
+            </ul>
+        </div>
+
+        {/* Tax Free */}
+        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#f1be42] mb-4">
+            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                🛍️ TAX-FREE 免稅須知
+            </h3>
+            <ul className="list-disc list-outside ml-4 space-y-2 text-base text-[#757575] mb-4">
+                <li><span className="font-bold text-[#3c3c3c]">消耗品：</span>會封裝，出境才能拆封。</li>
+                <li><span className="font-bold text-[#3c3c3c]">一般物品：</span>日本境內使用的商品需分開結帳。</li>
+                <li><span className="font-bold text-[#3c3c3c]">百貨公司：</span>分為「店裡辦理」與「免稅櫃台辦理」，請留意退稅時間。</li>
+            </ul>
+            <div className="flex space-x-2">
+                <span className="bg-[#f1be42] text-white px-2 py-1 rounded font-bold text-sm">税込 (含稅)</span>
+                <span className="bg-gray-200 text-gray-600 px-2 py-1 rounded font-bold text-sm">税抜き (未稅)</span>
+            </div>
+        </div>
+
+        {/* Google Map */}
+        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#2b6e90] mb-4">
+            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                📍 Google Map 定位分享
+            </h3>
+            <div className="bg-gray-100 p-3 rounded-lg text-sm text-[#3c3c3c] font-medium">
+                人像圖示 → 位置資訊分享 → 分享位置 → 複製連結
+            </div>
+        </div>
+
+        {/* Insurance */}
+        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#98c187] mb-4">
+            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                🏥 旅遊保險
+            </h3>
+            <ul className="space-y-2 text-base text-[#757575]">
+                <li><span className="font-bold text-[#3c3c3c]">全球海外急難救助 (國泰)：</span><br/>+886-2-27551258</li>
+                <li><span className="font-bold text-[#3c3c3c]">保險單號：</span><br/>159C13TDCB03536</li>
+                <li><span className="font-bold text-[#3c3c3c]">全球海外急難救助 (國泰)：</span><br/>+886-2-27551258</li>
+                <li><span className="font-bold text-[#3c3c3c]">保險單號：</span><br/>159C13TDCB03536</li>
+            </ul>
+        </div>
+
+        {/* Representative Office - Using Osaka data for correctness */}
+        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#d15b47] mb-4">
+            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                🆘 駐外代表處 (大阪)
+            </h3>
+            <ul className="space-y-2 text-base text-[#757575]">
+                <li><span className="font-bold text-[#3c3c3c]">台北駐大阪經濟文化辦事處</span></li>
+                <li className="text-base">大阪市北區中之島3-2-4 中之島フェスティバルタワー・ウエスト 30樓</li>
+                <li><span className="font-bold text-[#3c3c3c]">電話 (境內)：</span>06-6227-8623</li>
+                <li><span className="font-bold text-[#d15b47]">緊急聯絡 (境內)：</span>090-8794-4568</li>
+                <li className="text-sm text-red-500">▲非緊急狀況不能使用</li>
+            </ul>
+        </div>
+
+        {/* Emergency Numbers */}
+        <div className="grid grid-cols-2 gap-4">
+            <div className="bg-white rounded-xl shadow-md p-4 border-t-4 border-red-500 text-center">
+                <p className="text-gray-500 text-base">警察局</p>
+                <p className="text-3xl font-black text-red-500">110</p>
+            </div>
+            <div className="bg-white rounded-xl shadow-md p-4 border-t-4 border-red-500 text-center">
+                <p className="text-gray-500 text-base">火警 / 救護車</p>
+                <p className="text-3xl font-black text-red-500">119</p>
+            </div>
+        </div>
+
+        <button
+            onClick={() => setSubView(null)}
+            className="flex items-center text-[#2b6e90] font-semibold mt-6 mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+        >
+            <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+            返回選單
+        </button>
+    </div>
+);
+
+const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => (
+    <div className="p-4 max-w-lg mx-auto">
+        <button
+            onClick={() => setSubView(null)}
+            className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+        >
+            <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+            返回選單
+        </button>
+
+        <h2 className="text-2xl font-extrabold text-[#3c3c3c] mb-6 flex items-center">
+            🚗 日本自駕注意事項
+        </h2>
+
+         {/* Preparation */}
+         <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#2b6e90] mb-4">
+            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                📋 準備證件 Check List
+            </h3>
+            <ul className="list-disc list-outside ml-5 space-y-2 text-base text-[#757575]">
+                <li><span className="font-bold text-[#3c3c3c]">護照</span> (Passport)</li>
+                <li><span className="font-bold text-[#3c3c3c]">台灣駕照</span> (正本)</li>
+                <li><span className="font-bold text-[#3c3c3c]">駕照日文譯本</span> (正本)</li>
+            </ul>
+        </div>
+
+        {/* Traffic Light Rule - Emphasized */}
+        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#d15b47] mb-4">
+            <div className="flex items-start">
+                 <div className="mr-3 mt-1">
+                    <div className="flex space-x-1 mb-1">
+                        <div className="w-4 h-4 rounded-full bg-red-500"></div>
+                        <div className="w-4 h-4 rounded-full bg-yellow-400 opacity-30"></div>
+                        <div className="w-4 h-4 rounded-full bg-blue-400 opacity-30"></div>
+                    </div>
+                    <div className="flex space-x-1 justify-center">
+                         <div className="w-4 h-4 rounded-full bg-transparent"></div>
+                         <div className="w-4 h-4 rounded-full bg-transparent"></div>
+                         <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-[10px] text-white font-bold">➡</div>
+                    </div>
+                 </div>
+                 <div>
+                    <h3 className="text-lg font-bold text-[#3c3c3c] mb-1">紅燈 + 綠色箭頭</h3>
+                    <p className="text-base text-[#757575] leading-relaxed">
+                        當紅燈亮起，但下方有綠色方向指標時，<br/>
+                        <span className="font-bold text-[#d15b47]">可以依亮燈的方向指標行駛！</span>
+                    </p>
+                 </div>
+            </div>
+        </div>
+
+        {/* Speed Limits */}
+        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#98c187] mb-4">
+            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3">🚀 速限規定</h3>
+            <div className="grid grid-cols-1 gap-3">
+                 <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                    <span className="font-medium text-[#3c3c3c]">自動車道 (高速公路)</span>
+                    <span className="font-black text-xl text-[#d15b47] bg-white border-2 border-red-500 rounded-full w-12 h-12 flex items-center justify-center">80</span>
+                 </div>
+                 <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                    <span className="font-medium text-[#3c3c3c]">一般道路</span>
+                    <span className="font-black text-xl text-blue-500 bg-white border-2 border-blue-500 rounded-full w-12 h-12 flex items-center justify-center text-sm">30~50</span>
+                 </div>
+                 <div className="flex justify-between items-center bg-gray-50 p-2 rounded border border-purple-200">
+                    <span className="font-medium text-purple-700">ETC 收費站</span>
+                    <span className="font-bold text-base text-purple-700">減速至 20 km/h 以下</span>
+                 </div>
+            </div>
+            <p className="text-xs text-gray-400 mt-2">*高速公路過路費：ETC扣款，請走【ETC專用】道(紫色)。</p>
+        </div>
+
+        {/* Gas */}
+        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#f1be42] mb-4">
+             <h3 className="text-lg font-bold text-[#3c3c3c] mb-3">⛽ 加油種類</h3>
+             <p className="text-sm text-gray-500 mb-2">加油站大多是自助式加油。</p>
+             <div className="grid grid-cols-2 gap-4">
+                <div className="bg-red-50 p-3 rounded-lg border border-red-200 text-center">
+                    <p className="text-xs text-gray-500">一般汽油 (95)</p>
+                    <p className="text-lg font-bold text-red-600">Regular</p>
+                    <p className="text-xs text-red-400">レギュラー</p>
+                    <div className="mt-1 w-full h-2 bg-red-500 rounded-full"></div>
+                </div>
+                <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200 text-center">
+                    <p className="text-xs text-gray-500">特級汽油 (98)</p>
+                    <p className="text-lg font-bold text-yellow-600">High Octane</p>
+                    <p className="text-xs text-yellow-500">ハイオク</p>
+                    <div className="mt-1 w-full h-2 bg-yellow-400 rounded-full"></div>
+                </div>
+             </div>
+        </div>
+
+        {/* Rules List */}
+        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-red-500 mb-4">
+             <h3 className="text-lg font-bold text-[#3c3c3c] mb-3">⚠️ 重要行車規則</h3>
+             <ul className="space-y-4">
+                <li className="flex items-start">
+                    <div className="flex-shrink-0 w-8 h-8 bg-red-600 text-white font-bold text-xs flex items-center justify-center transform rotate-180" style={{clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)"}}>
+                        止まれ
+                    </div>
+                    <div className="ml-3">
+                        <p className="font-bold text-[#3c3c3c]">遇到「止まれ」標誌</p>
+                        <p className="text-sm text-[#757575]">一定要在停止線前<span className="text-red-500 font-bold">完全停止</span>後再開。</p>
+                    </div>
+                </li>
+                <li className="flex items-start">
+                     <div className="flex-shrink-0 w-8 h-8 bg-blue-500 rounded text-white flex items-center justify-center text-lg">↩️</div>
+                     <div className="ml-3">
+                        <p className="font-bold text-[#3c3c3c]">右轉車需禮讓</p>
+                        <p className="text-sm text-[#757575]">左轉車優先 > 直行車 > 右轉車。</p>
+                     </div>
+                </li>
+                <li className="flex items-start">
+                     <div className="flex-shrink-0 w-8 h-8 bg-green-600 rounded text-white flex items-center justify-center text-sm">Bus</div>
+                     <div className="ml-3">
+                        <p className="font-bold text-[#3c3c3c]">綠色車道</p>
+                        <p className="text-sm text-[#757575]">限制車輛通行（通常為公車/計程車），請避免行駛。</p>
+                     </div>
+                </li>
+                <li className="flex items-start">
+                     <div className="flex-shrink-0 w-8 h-8 bg-yellow-500 rounded text-white flex items-center justify-center text-sm">Line</div>
+                     <div className="ml-3">
+                        <p className="font-bold text-[#3c3c3c]">黃色實線</p>
+                        <p className="text-sm text-[#757575]">禁止變換車道。</p>
+                     </div>
+                </li>
+             </ul>
+        </div>
+
+        <button
+            onClick={() => setSubView(null)}
+            className="flex items-center text-[#2b6e90] font-semibold mt-6 mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+        >
+            <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+            返回選單
+        </button>
+    </div>
+);
+
+const LegStretchContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => {
+    
+    return (
+        <div className="p-4 max-w-lg mx-auto">
+            <button 
+                onClick={() => setSubView(null)} 
+                className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+            >
+                <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+                返回選單
+            </button>
+
+            <h2 className="text-2xl font-extrabold text-[#3c3c3c] mb-6 flex items-center">
+                🦵 逛一整天腳底快炸掉？
+            </h2>
+
+            {/* Threads Button */}
+            <div className="mb-8">
+                 <a 
+                    href="https://www.threads.net/@mobilitywithnoah/post/DNfAtfPzYWU?xmt=AQF0CLbzE-UAjiE0PF6g_xdyT4DRVU8KazsqlkfY1HnHl_AvgK1hYs6wEadfIfjZPlrRT7Yw&slof=1" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-full bg-black text-white font-bold py-4 rounded-xl shadow-lg hover:bg-gray-800 transition duration-300"
+                >
+                    <ActivityIcon className="w-5 h-5 mr-2 text-white" />
+                    <span>前往 Threads 觀看教學影片</span>
+                </a>
+                 <p className="text-xs text-gray-500 text-center mt-2">
+                    點擊將開啟外部連結
+                 </p>
+            </div>
+
+            {/* Exercise List */}
+            <div className="space-y-4">
+                 <div className="bg-white p-4 rounded-xl shadow-md border-l-4 border-[#98c187]">
+                    <div className="flex justify-between items-center mb-2">
+                        <h3 className="font-bold text-lg text-[#3c3c3c]">1. 足底踩球</h3>
+                        <span className="bg-[#98c187] text-white text-xs px-2 py-1 rounded-full">腳趾篇</span>
+                    </div>
+                    <p className="text-[#757575] text-sm mb-2">放鬆足底筋膜，減緩行走疲勞。</p>
+                    <div className="flex items-center text-[#2b6e90] font-bold bg-[#f0f4f6] p-2 rounded-lg">
+                        <ClockIcon className="w-4 h-4 mr-2" />
+                        30秒 x 3組
+                    </div>
+                 </div>
+
+                 <div className="bg-white p-4 rounded-xl shadow-md border-l-4 border-[#98c187]">
+                    <div className="flex justify-between items-center mb-2">
+                        <h3 className="font-bold text-lg text-[#3c3c3c]">2. 腳趾步伐</h3>
+                        <span className="bg-[#98c187] text-white text-xs px-2 py-1 rounded-full">腳趾篇</span>
+                    </div>
+                    <p className="text-[#757575] text-sm mb-2">訓練足弓支撐力，改善走路姿勢。</p>
+                    <div className="flex items-center text-[#2b6e90] font-bold bg-[#f0f4f6] p-2 rounded-lg">
+                        <span className="text-sm">👣 10次 x 3組</span>
+                    </div>
+                 </div>
+
+                 <div className="bg-white p-4 rounded-xl shadow-md border-l-4 border-[#f1be42]">
+                    <div className="flex justify-between items-center mb-2">
+                        <h3 className="font-bold text-lg text-[#3c3c3c]">3. 腿後伸展</h3>
+                        <span className="bg-[#f1be42] text-white text-xs px-2 py-1 rounded-full">腿型篇</span>
+                    </div>
+                    <p className="text-[#757575] text-sm mb-2">弓箭步伸展，拉開緊繃的小腿後側。</p>
+                    <div className="flex items-center text-[#2b6e90] font-bold bg-[#f0f4f6] p-2 rounded-lg">
+                        <span className="text-sm">🦵 10次 x 3組</span>
+                    </div>
+                 </div>
+
+                 <div className="bg-white p-4 rounded-xl shadow-md border-l-4 border-[#d15b47]">
+                    <div className="flex justify-between items-center mb-2">
+                        <h3 className="font-bold text-lg text-[#3c3c3c]">4. 梨狀肌伸展</h3>
+                        <span className="bg-[#d15b47] text-white text-xs px-2 py-1 rounded-full">腰痛篇</span>
+                    </div>
+                    <p className="text-[#757575] text-sm mb-2">躺姿翹腳抱膝，舒緩臀部與下背痠痛。</p>
+                    <div className="flex items-center text-[#2b6e90] font-bold bg-[#f0f4f6] p-2 rounded-lg">
+                         <ClockIcon className="w-4 h-4 mr-2" />
+                        30秒 x 3組
+                    </div>
+                 </div>
+            </div>
+            <button 
+                onClick={() => setSubView(null)} 
+                className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+            >
+                <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+                返回選單
+            </button>
+        </div>
+    );
+};
 
 const PackingListContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => {
     const [listState, setListState] = useState<PackingCategory[] | null>(null);
@@ -536,6 +1021,13 @@ const PackingListContent: React.FC<{ setSubView: (v: string | null) => void }> =
                     </div>
                 </>
             )}
+            <button 
+                onClick={() => setSubView(null)} 
+                className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+            >
+                <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+                返回選單
+            </button>
         </div>
     );
 };
@@ -551,6 +1043,18 @@ const MenuPage: React.FC<{ setCurrentPage: (p: string) => void }> = ({ setCurren
     }
     if (subView === 'accommodation') {
         return <AccommodationContent setSubView={setSubView} />;
+    }
+    if (subView === 'worshipGuide') {
+        return <WorshipGuideContent setSubView={setSubView} />;
+    }
+    if (subView === 'legStretch') {
+        return <LegStretchContent setSubView={setSubView} />;
+    }
+    if (subView === 'survivalGuide') {
+        return <SurvivalGuideContent setSubView={setSubView} />;
+    }
+    if (subView === 'drivingGuide') {
+        return <DrivingGuideContent setSubView={setSubView} />;
     }
 
     return (
@@ -593,9 +1097,65 @@ const MenuPage: React.FC<{ setCurrentPage: (p: string) => void }> = ({ setCurren
                 <div className="flex items-center justify-between">
                     <div>
                         <p className="text-lg font-bold text-[#3c3c3c]">住宿資訊</p>
-                        <p className="text-sm text-[#757575]">各晚住宿地址、MapCode</p>
+                        <p className="text-base text-[#757575]">各晚住宿地址、MapCode</p>
                     </div>
                     <HomeIcon className="w-6 h-6 text-[#f1be42]" /> 
+                </div>
+            </div>
+
+            {/* Survival Guide Link - New */}
+            <div 
+                className="bg-white rounded-xl shadow-md p-4 mb-4 border-l-4 border-[#d15b47] cursor-pointer hover:shadow-lg transition duration-300"
+                onClick={() => setSubView('survivalGuide')}
+            >
+                <div className="flex items-center justify-between">
+                    <div>
+                        <p className="text-lg font-bold text-[#3c3c3c]">生存指南</p>
+                        <p className="text-[14px] text-[#757575]">明信片、免稅、緊急電話</p>
+                    </div>
+                    <LifeBuoyIcon className="w-6 h-6 text-[#d15b47]" /> 
+                </div>
+            </div>
+
+            {/* Driving Guide Link - New */}
+             <div 
+                className="bg-white rounded-xl shadow-md p-4 mb-4 border-l-4 border-[#2b6e90] cursor-pointer hover:shadow-lg transition duration-300"
+                onClick={() => setSubView('drivingGuide')}
+            >
+                <div className="flex items-center justify-between">
+                    <div>
+                        <p className="text-lg font-bold text-[#3c3c3c]">行車注意</p>
+                        <p className="text-[14px] text-[#757575]">紅綠燈、速限、加油對照表</p>
+                    </div>
+                    <CarIcon className="w-6 h-6 text-[#2b6e90]" /> 
+                </div>
+            </div>
+
+            {/* Worship Guide Link */}
+            <div 
+                className="bg-white rounded-xl shadow-md p-4 mb-4 border-l-4 border-[#d15b47] cursor-pointer hover:shadow-lg transition duration-300"
+                onClick={() => setSubView('worshipGuide')}
+            >
+                <div className="flex items-center justify-between">
+                    <div>
+                        <p className="text-lg font-bold text-[#3c3c3c]">如何參拜</p>
+                        <p className="text-[14px] text-[#757575]">神社參拜禮儀、手水舍教學</p>
+                    </div>
+                    <ShrineIcon className="w-6 h-6 text-[#d15b47]" /> 
+                </div>
+            </div>
+
+            {/* Leg Stretch Link */}
+            <div 
+                className="bg-white rounded-xl shadow-md p-4 mb-4 border-l-4 border-[#6366f1] cursor-pointer hover:shadow-lg transition duration-300"
+                onClick={() => setSubView('legStretch')}
+            >
+                <div className="flex items-center justify-between">
+                    <div>
+                        <p className="text-lg font-bold text-[#3c3c3c]">腿部拉筋</p>
+                        <p className="text-sm text-[#757575]">逛街久走自救！4招舒緩</p>
+                    </div>
+                    <ActivityIcon className="w-6 h-6 text-[#6366f1]" /> 
                 </div>
             </div>
 
@@ -671,7 +1231,7 @@ const App: React.FC = () => {
                     onClick={() => handleTabChange('itinerary')}
                 >
                     <MapIcon className="w-6 h-6 mb-1" />
-                    <span className="text-[10px]">行程總覽</span>
+                    <span className="text-[14px]">行程總覽</span>
                 </button>
                 
                 <button 
@@ -679,7 +1239,7 @@ const App: React.FC = () => {
                     onClick={() => handleTabChange('menu')}
                 >
                     <MenuIcon className="w-6 h-6 mb-1" />
-                    <span className="text-[10px]">選單</span>
+                    <span className="text-[14px]">選單</span>
                 </button>
             </footer>
         </div>
