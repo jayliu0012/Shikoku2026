@@ -5,16 +5,19 @@ export const PACKING_LIST_COLLECTION = 'packing_list';
 export const FIREBASE_LIST_DOC_ID = 'userList';
 
 export const initialPackingList: PackingCategory[] = [
-    { category: "重要文件 / 隨身行李 (Carry-on)", icon: "🔖", items: [
+    { category: "重要文件(Documents)", icon: "🔖", items: [
         { name: "護照、電子簽證(ETA)", packed: false },
         { name: "機票 (電子登機證)", packed: false },
         { name: "旅遊保險資料", packed: false },
-        { name: "現金 (台幣、日幣)", packed: false },
-        { name: "信用卡、提款卡", packed: false },
         { name: "國際駕照、台灣駕照", packed: false },
         { name: "訂房/訂車單", packed: false },
-        { name: "手機、行動電源、線材", packed: false },
-        { name: "少量個人藥品", packed: false },
+    ]},
+    { category: "隨身行李 (Carry-on)", icon: "👜", items: [
+        { name: "現金 (台幣、日幣)", packed: false },
+        { name: "信用卡、提款卡", packed: false },
+        { name: "行動電源", packed: false },
+        { name: "充電線、頭", packed: false },
+        { name: "個人藥品", packed: false },
         { name: "耳機、頸枕、眼罩", packed: false },
         { name: "水壺、輕便雨傘", packed: false },
         { name: "手錶、太陽眼鏡", packed: false },
@@ -37,7 +40,6 @@ export const initialPackingList: PackingCategory[] = [
         { name: "衛生用品 (女性)", packed: false },
     ]},
     { category: "其他用品 (Others)", icon: "🧐", items: [
-        { name: "充電器、充電線", packed: false },
         { name: "環保袋、購物袋", packed: false },
         { name: "洗衣袋、夾鏈袋", packed: false },
         { name: "個人習慣用品", packed: false },

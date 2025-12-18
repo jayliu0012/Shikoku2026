@@ -5,7 +5,8 @@ import {
   CheckIcon, SquareIcon, LuggageIcon, BatteryIcon, HomeIcon, ClockIcon, LocationIcon,
   TrainIcon, UtensilsIcon, ShoppingBagIcon, TicketIcon, BedIcon,
   FuelIcon, ParkingIcon, CameraIcon, ShrineIcon, MailIcon, HotSpringIcon,
-  BusIcon, ShipIcon, CableCarIcon, MusicIcon, ActivityIcon, LifeBuoyIcon, CarIcon
+  BusIcon, ShipIcon, CableCarIcon, MusicIcon, ActivityIcon, LifeBuoyIcon, CarIcon,
+  InfoIcon, ClothIcon
 } from './components/Icons';
 import { 
   initialPackingList, 
@@ -354,7 +355,7 @@ const FlightContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ s
 );
 
 const PowerBankRulesSection: React.FC = () => (
-    <div className="mt-4 p-3 bg-gray-200 rounded-lg shadow-inner">
+    <div className="mb-6 p-3 bg-gray-200 rounded-lg shadow-inner">
         <h4 className="text-base font-bold text-[#3c3c3c] mb-2 flex items-center">
             <BatteryIcon className="w-4 h-4 mr-2 text-[#98c187]" />
             行動電源攜帶詳細規定
@@ -500,7 +501,7 @@ const WorshipGuideContent: React.FC<{ setSubView: (v: string | null) => void }> 
                 </div>
             </div>
 
-             {/* Step 3: Worship */}
+            {/* Step 3: Worship */}
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
                 <div className="bg-[#f0f4f6] px-4 py-2 border-b border-gray-100 flex items-center">
                     <span className="bg-[#f1be42] text-white text-xs font-bold px-2 py-1 rounded mr-2">STEP 3</span>
@@ -550,10 +551,10 @@ const WorshipGuideContent: React.FC<{ setSubView: (v: string | null) => void }> 
                             <p className="text-base text-[#757575]">最後深深鞠躬一次。</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
+
         <button
             onClick={() => setSubView(null)}
             className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-base"
@@ -564,106 +565,174 @@ const WorshipGuideContent: React.FC<{ setSubView: (v: string | null) => void }> 
     </div>
 );
 
-const SurvivalGuideContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => (
-    <div className="p-4 max-w-lg mx-auto">
-        <button
-            onClick={() => setSubView(null)}
-            className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
-        >
-            <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
-            返回選單
-        </button>
+const SurvivalGuideContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => {
+    const [cathayPolicy, setCathayPolicy] = useState(() => localStorage.getItem('cathay_policy_no') || '');
+    const [tokioPolicy, setTokioPolicy] = useState(() => localStorage.getItem('tokio_policy_no') || '');
 
-        <h2 className="text-2xl font-extrabold text-[#3c3c3c] mb-6 flex items-center">
-            🆘 生存指南注意事項
-        </h2>
+    useEffect(() => {
+        localStorage.setItem('cathay_policy_no', cathayPolicy);
+    }, [cathayPolicy]);
 
-        {/* Postcards */}
-        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#d15b47] mb-4">
-            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
-                📮 明信片 | 郵資
-            </h3>
-            <ul className="list-disc list-outside ml-4 space-y-2 text-base text-[#757575]">
-                <li><span className="font-bold text-[#3c3c3c]">郵資：</span>¥100 (國際明信片)</li>
-                <li><span className="font-bold text-[#3c3c3c]">郵便局：</span>需要抽號碼牌，櫃台可索取紀念戳章。</li>
-                <li><span className="font-bold text-[#3c3c3c]">郵筒：</span>機場、街道都有，請投左邊【手紙・はがき】專用口。</li>
-            </ul>
+    useEffect(() => {
+        localStorage.setItem('tokio_policy_no', tokioPolicy);
+    }, [tokioPolicy]);
+
+    return (
+        <div className="p-4 max-w-lg mx-auto">
+            <button
+                onClick={() => setSubView(null)}
+                className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+            >
+                <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+                返回選單
+            </button>
+
+            <h2 className="text-2xl font-extrabold text-[#3c3c3c] mb-6 flex items-center">
+                🆘 生存指南注意事項
+            </h2>
+
+            {/* Postcards */}
+            <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#d15b47] mb-4">
+                <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                    📮 明信片 | 郵資
+                </h3>
+                <ul className="list-disc list-outside ml-4 space-y-2 text-base text-[#757575]">
+                    <li><span className="font-bold text-[#3c3c3c]">郵資：</span>¥100 (國際明信片)</li>
+                    <li><span className="font-bold text-[#3c3c3c]">郵便局：</span>需要抽號碼牌，櫃台可索取紀念戳章。</li>
+                    <li><span className="font-bold text-[#3c3c3c]">郵筒：</span>機場、街道都有，請投左邊【手紙・はがき】專用口。</li>
+                </ul>
+            </div>
+
+            {/* Tax Free */}
+            <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#f1be42] mb-4">
+                <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                    🛍️ TAX-FREE 免稅須知
+                </h3>
+                <ul className="list-disc list-outside ml-4 space-y-2 text-base text-[#757575] mb-4">
+                    <li><span className="font-bold text-[#3c3c3c]">消耗品：</span>會封裝，出境才能拆封。</li>
+                    <li><span className="font-bold text-[#3c3c3c]">一般物品：</span>日本境內使用的商品需分開結帳。</li>
+                    <li><span className="font-bold text-[#3c3c3c]">百貨公司：</span>分為「店裡辦理」與「免稅櫃台辦理」，請留意退稅時間。</li>
+                </ul>
+                <div className="flex space-x-2">
+                    <span className="bg-[#f1be42] text-white px-2 py-1 rounded font-bold text-sm">税込 (含稅)</span>
+                    <span className="bg-gray-200 text-gray-600 px-2 py-1 rounded font-bold text-sm">税抜き (未稅)</span>
+                </div>
+            </div>
+
+            {/* Google Map */}
+            <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#2b6e90] mb-4">
+                <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                    📍 Google Map 定位分享
+                </h3>
+                <div className="bg-gray-100 p-3 rounded-lg text-sm text-[#3c3c3c] font-medium">
+                    人像圖示 → 位置資訊分享 → 分享位置 → 複製連結
+                </div>
+            </div>
+
+            {/* Insurance */}
+            <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#98c187] mb-4">
+                <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                    🏥 旅遊保險
+                </h3>
+                <div className="space-y-4">
+                    <div>
+                        <p className="font-bold text-[#3c3c3c] text-base">全球海外急難救助 (國泰)</p>
+                        <p className="text-base text-[#757575] mb-1">電話：+886-2-27551258</p>
+                        <div className="mt-1">
+                            <label className="text-base font-bold text-[#98c187] uppercase">保險單號</label>
+                            <input 
+                                type="text" 
+                                value={cathayPolicy}
+                                onChange={(e) => setCathayPolicy(e.target.value)}
+                                placeholder="輸入保險單號..."
+                                className="w-full mt-1 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-mono text-[#3c3c3c] focus:outline-none focus:ring-2 focus:ring-[#98c187] transition"
+                            />
+                        </div>
+                    </div>
+                    <div className="pt-3 border-t border-gray-100">
+                        <p className="font-bold text-[#3c3c3c] text-base">東京海上日動</p>
+                        <p className="text-base text-[#757575] mb-1">電話：+81-3-67582444</p>
+                        <div className="mt-1">
+                            <label className="text-base font-bold text-[#98c187] uppercase">保險單號</label>
+                            <input 
+                                type="text" 
+                                value={tokioPolicy}
+                                onChange={(e) => setTokioPolicy(e.target.value)}
+                                placeholder="輸入保險單號..."
+                                className="w-full mt-1 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-mono text-[#3c3c3c] focus:outline-none focus:ring-2 focus:ring-[#98c187] transition"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Representative Office - Using Osaka data for correctness */}
+            <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#d15b47] mb-4">
+                <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
+                    🆘 駐外代表處 (大阪)
+                </h3>
+                <ul className="space-y-2 text-base text-[#757575]">
+                    <li><span className="font-bold text-[#3c3c3c]">台北駐大阪經濟文化辦事處</span></li>
+                    <li className="text-base">大阪市北區中之島3-2-4 中之島フェスティバルタワー・ウエスト 30樓</li>
+                    <li><span className="font-bold text-[#3c3c3c]">電話 (境內)：</span>06-6227-8623</li>
+                    <li><span className="font-bold text-[#d15b47]">緊急聯絡 (境內)：</span>090-8794-4568</li>
+                    <li className="text-sm text-red-500">▲非緊急狀況不能使用</li>
+                </ul>
+            </div>
+
+            {/* Emergency Numbers */}
+            <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-xl shadow-md p-4 border-t-4 border-red-500 text-center">
+                    <p className="text-gray-500 text-base">警察局</p>
+                    <p className="text-3xl font-black text-red-500">110</p>
+                </div>
+                <div className="bg-white rounded-xl shadow-md p-4 border-t-4 border-red-500 text-center">
+                    <p className="text-gray-500 text-base">火警 / 救護車</p>
+                    <p className="text-3xl font-black text-red-500">119</p>
+                </div>
+            </div>
+
+            <button
+                onClick={() => setSubView(null)}
+                className="flex items-center text-[#2b6e90] font-semibold mt-6 mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+            >
+                <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+                返回選單
+            </button>
         </div>
+    );
+};
 
-        {/* Tax Free */}
-        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#f1be42] mb-4">
-            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
-                🛍️ TAX-FREE 免稅須知
-            </h3>
-            <ul className="list-disc list-outside ml-4 space-y-2 text-base text-[#757575] mb-4">
-                <li><span className="font-bold text-[#3c3c3c]">消耗品：</span>會封裝，出境才能拆封。</li>
-                <li><span className="font-bold text-[#3c3c3c]">一般物品：</span>日本境內使用的商品需分開結帳。</li>
-                <li><span className="font-bold text-[#3c3c3c]">百貨公司：</span>分為「店裡辦理」與「免稅櫃台辦理」，請留意退稅時間。</li>
-            </ul>
-            <div className="flex space-x-2">
-                <span className="bg-[#f1be42] text-white px-2 py-1 rounded font-bold text-sm">税込 (含稅)</span>
-                <span className="bg-gray-200 text-gray-600 px-2 py-1 rounded font-bold text-sm">税抜き (未稅)</span>
+const CollapsibleSection: React.FC<{
+  title: string;
+  colorClass: string;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+}> = ({ title, colorClass, children, defaultOpen = false }) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  return (
+    <div className={`bg-white rounded-xl shadow-md border-l-4 ${colorClass} mb-4 overflow-hidden`}>
+      <button 
+        className="w-full p-5 flex justify-between items-center bg-white hover:bg-gray-50 transition duration-150 text-left focus:outline-none"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <h3 className="text-lg font-bold text-[#3c3c3c] flex items-center">
+          {title}
+        </h3>
+        <ChevronDown className={`w-5 h-5 text-[#757575] transition-transform duration-200 ${isOpen ? 'transform rotate-180' : ''}`} />
+      </button>
+      
+      {isOpen && (
+        <div className="px-5 pb-5 pt-0">
+            <div className="border-t border-gray-100 pt-4">
+                {children}
             </div>
         </div>
-
-        {/* Google Map */}
-        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#2b6e90] mb-4">
-            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
-                📍 Google Map 定位分享
-            </h3>
-            <div className="bg-gray-100 p-3 rounded-lg text-sm text-[#3c3c3c] font-medium">
-                人像圖示 → 位置資訊分享 → 分享位置 → 複製連結
-            </div>
-        </div>
-
-        {/* Insurance */}
-        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#98c187] mb-4">
-            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
-                🏥 旅遊保險
-            </h3>
-            <ul className="space-y-2 text-base text-[#757575]">
-                <li><span className="font-bold text-[#3c3c3c]">全球海外急難救助 (國泰)：</span><br/>+886-2-27551258</li>
-                <li><span className="font-bold text-[#3c3c3c]">保險單號：</span><br/>159C13TDCB03536</li>
-                <li><span className="font-bold text-[#3c3c3c]">全球海外急難救助 (國泰)：</span><br/>+886-2-27551258</li>
-                <li><span className="font-bold text-[#3c3c3c]">保險單號：</span><br/>159C13TDCB03536</li>
-            </ul>
-        </div>
-
-        {/* Representative Office - Using Osaka data for correctness */}
-        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#d15b47] mb-4">
-            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
-                🆘 駐外代表處 (大阪)
-            </h3>
-            <ul className="space-y-2 text-base text-[#757575]">
-                <li><span className="font-bold text-[#3c3c3c]">台北駐大阪經濟文化辦事處</span></li>
-                <li className="text-base">大阪市北區中之島3-2-4 中之島フェスティバルタワー・ウエスト 30樓</li>
-                <li><span className="font-bold text-[#3c3c3c]">電話 (境內)：</span>06-6227-8623</li>
-                <li><span className="font-bold text-[#d15b47]">緊急聯絡 (境內)：</span>090-8794-4568</li>
-                <li className="text-sm text-red-500">▲非緊急狀況不能使用</li>
-            </ul>
-        </div>
-
-        {/* Emergency Numbers */}
-        <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white rounded-xl shadow-md p-4 border-t-4 border-red-500 text-center">
-                <p className="text-gray-500 text-base">警察局</p>
-                <p className="text-3xl font-black text-red-500">110</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-md p-4 border-t-4 border-red-500 text-center">
-                <p className="text-gray-500 text-base">火警 / 救護車</p>
-                <p className="text-3xl font-black text-red-500">119</p>
-            </div>
-        </div>
-
-        <button
-            onClick={() => setSubView(null)}
-            className="flex items-center text-[#2b6e90] font-semibold mt-6 mb-6 p-2 rounded-full hover:bg-white transition text-sm"
-        >
-            <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
-            返回選單
-        </button>
+      )}
     </div>
-);
+  );
+};
 
 const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => (
     <div className="p-4 max-w-lg mx-auto">
@@ -679,23 +748,15 @@ const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> 
             🚗 日本自駕注意事項
         </h2>
 
-         {/* Preparation */}
-         <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#2b6e90] mb-4">
-            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
-                📋 準備證件
-            </h3>
+        <CollapsibleSection title="📋 準備證件" colorClass="border-[#2b6e90]" defaultOpen={true}>
             <ul className="list-disc list-outside ml-5 space-y-2 text-base text-[#757575]">
                 <li><span className="font-bold text-[#3c3c3c]">護照</span></li>
                 <li><span className="font-bold text-[#3c3c3c]">台灣駕照</span> (正本)</li>
                 <li><span className="font-bold text-[#3c3c3c]">駕照日文譯本</span> (正本)</li>
             </ul>
-        </div>
+        </CollapsibleSection>
 
-        {/* Rental Car Info - Added based on request */}
-        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#6366f1] mb-4">
-            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
-                🚙 租車預約資訊
-            </h3>
+        <CollapsibleSection title="🚙 租車預約資訊" colorClass="border-[#6366f1]">
             <div className="space-y-3 text-base text-[#3c3c3c]">
                 <div className="flex justify-between border-b border-gray-100 pb-2">
                     <span className="font-bold text-[#757575]">租車公司</span>
@@ -723,53 +784,8 @@ const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> 
                 </div>
                 <p className="text-sm text-[#48404D] mt-2">*ETC費用另計，將於最後一天還車時在店內結算</p>
             </div>
-        </div>
-
-        
-
-        {/* Speed Limits */}
-        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#98c187] mb-4">
-            <h3 className="text-lg font-bold text-[#3c3c3c] mb-3">🚀 速限規定</h3>
-            <div className="grid grid-cols-1 gap-3">
-                 <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
-                    <span className="font-medium text-[#3c3c3c]">自動車道 (高速公路)</span>
-                    <span className="font-black text-xl text-[#d15b47] bg-white border-2 border-red-500 rounded-full w-12 h-12 flex items-center justify-center">80</span>
-                 </div>
-                 <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
-                    <span className="font-medium text-[#3c3c3c]">一般道路</span>
-                    <span className="font-black text-xl text-blue-500 bg-white border-2 border-blue-500 rounded-full w-12 h-12 flex items-center justify-center text-sm">40</span>
-                 </div>
-                 <div className="flex justify-between items-center bg-gray-50 p-2 rounded border border-purple-200">
-                    <span className="font-medium text-purple-700">ETC 收費站</span>
-                    <span className="font-bold text-base text-purple-700">減速至 20 km/h 以下</span>
-                 </div>
-            </div>
-            <p className="text-xs text-gray-400 mt-2">*高速公路過路費：ETC扣款，請走【ETC專用】道(紫色)。</p>
-        </div>
-
-        {/* Gas */}
-        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#f1be42] mb-4">
-             <h3 className="text-lg font-bold text-[#3c3c3c] mb-3">⛽ 加油種類</h3>
-             <p className="text-sm text-gray-500 mb-2">加油站大多是自助式加油。</p>
-             <div className="grid grid-cols-2 gap-4">
-                <div className="bg-red-50 p-3 rounded-lg border border-red-200 text-center">
-                    <p className="text-xs text-gray-500">一般汽油 (95)</p>
-                    <p className="text-lg font-bold text-red-600">Regular</p>
-                    <p className="text-xs text-red-400">レギュラー</p>
-                    <div className="mt-1 w-full h-2 bg-red-500 rounded-full"></div>
-                </div>
-                <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200 text-center">
-                    <p className="text-xs text-gray-500">特級汽油 (98)</p>
-                    <p className="text-lg font-bold text-yellow-600">High Octane</p>
-                    <p className="text-xs text-yellow-500">ハイオク</p>
-                    <div className="mt-1 w-full h-2 bg-yellow-400 rounded-full"></div>
-                </div>
-             </div>
-        </div>
-
-        {/* Rules List */}
-        <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-red-500 mb-4">
-             <h3 className="text-lg font-bold text-[#3c3c3c] mb-3">⚠️ 重要行車規則</h3>
+        </CollapsibleSection>
+        <CollapsibleSection title="⚠️ 重要行車規則" colorClass="border-red-500" defaultOpen={true}>
              <ul className="space-y-4">
                 <li className="flex items-start">
                     <div className="flex-shrink-0 w-8 h-8 bg-red-600 text-white font-bold text-xs flex items-center justify-center transform" style={{clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)"}}>
@@ -837,7 +853,43 @@ const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> 
                      </div>
                 </li>
              </ul>
-        </div>
+        </CollapsibleSection>
+
+        <CollapsibleSection title="🚀 速限規定" colorClass="border-[#98c187]">
+            <div className="grid grid-cols-1 gap-3">
+                 <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                    <span className="font-medium text-[#3c3c3c]">自動車道 (高速公路)</span>
+                    <span className="font-black text-xl text-[#d15b47] bg-white border-2 border-red-500 rounded-full w-12 h-12 flex items-center justify-center">80</span>
+                 </div>
+                 <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                    <span className="font-medium text-[#3c3c3c]">一般道路</span>
+                    <span className="font-black text-xl text-blue-500 bg-white border-2 border-blue-500 rounded-full w-12 h-12 flex items-center justify-center text-sm">40</span>
+                 </div>
+                 <div className="flex justify-between items-center bg-gray-50 p-2 rounded border border-purple-200">
+                    <span className="font-medium text-purple-700">ETC 收費站</span>
+                    <span className="font-bold text-base text-purple-700">減速至 20 km/h 以下</span>
+                 </div>
+            </div>
+            <p className="text-xs text-gray-400 mt-2">*高速公路過路費：ETC扣款，請走【ETC專用】道(紫色)。</p>
+        </CollapsibleSection>
+
+        <CollapsibleSection title="⛽ 加油種類" colorClass="border-[#f1be42]">
+             <p className="text-sm text-gray-500 mb-2">加油站大多是自助式加油。</p>
+             <div className="grid grid-cols-2 gap-4">
+                <div className="bg-red-50 p-3 rounded-lg border border-red-200 text-center">
+                    <p className="text-xs text-gray-500">一般汽油 (95)</p>
+                    <p className="text-lg font-bold text-red-600">Regular</p>
+                    <p className="text-xs text-red-400">レギュラー</p>
+                    <div className="mt-1 w-full h-2 bg-red-500 rounded-full"></div>
+                </div>
+                <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200 text-center">
+                    <p className="text-xs text-gray-500">特級汽油 (98)</p>
+                    <p className="text-lg font-bold text-yellow-600">High Octane</p>
+                    <p className="text-xs text-yellow-500">ハイオク</p>
+                    <div className="mt-1 w-full h-2 bg-yellow-400 rounded-full"></div>
+                </div>
+             </div>
+        </CollapsibleSection>
 
         <button
             onClick={() => setSubView(null)}
@@ -940,46 +992,133 @@ const LegStretchContent: React.FC<{ setSubView: (v: string | null) => void }> = 
     );
 };
 
+const ShikokuInfoContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => {
+    const weatherLinks = [
+        { name: '香川天氣', url: 'https://shikoku-guide.com/tw/information/kagawawheather/', color: 'bg-[#2b6e90]' },
+        { name: '德島天氣', url: 'https://shikoku-guide.com/tw/information/tokushimawheather/', color: 'bg-[#d15b47]' },
+        { name: '愛媛天氣', url: 'https://shikoku-guide.com/tw/information/ehimewheather/', color: 'bg-[#f1be42]' },
+        { name: '高知天氣', url: 'https://shikoku-guide.com/tw/information/kochiwheather/', color: 'bg-[#98c187]' }
+    ];
+
+    const outfitData = [
+        {
+            region: '香川 (Kagawa)',
+            temp: '8°C - 17°C',
+            advice: '瀨戶內海氣候溫暖，但早晚溫差大。建議「洋蔥式」穿法：內層發熱衣或短袖，中層長袖針織衫，外層薄大衣或風衣。',
+            icon: '🍜'
+        },
+        {
+            region: '德島 (Tokushima)',
+            temp: '7°C - 16°C',
+            advice: '山區較多，早晚溫差更為顯著。若要看鳴門渦潮，海上風力強勁，建議攜帶防風外套與圍巾。',
+            icon: '🌀'
+        },
+        {
+            region: '愛媛 (Ehime)',
+            temp: '9°C - 18°C',
+            advice: '氣候相對宜人。在道後溫泉散步時，穿著簡單長袖配上休閒外套即可。要注意松山城等高處風大。',
+            icon: '🍊'
+        },
+        {
+            region: '高知 (Kochi)',
+            temp: '10°C - 19°C',
+            advice: '四國最溫暖的地區。白天可能只需長袖襯衫，但面對太平洋水氣重，建議隨身攜帶摺疊傘或具防撥水功能的外套。',
+            icon: '🐳'
+        }
+    ];
+
+    return (
+        <div className="p-4 max-w-lg mx-auto">
+            <button 
+                onClick={() => setSubView(null)} 
+                className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+            >
+                <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+                返回選單
+            </button>
+
+            <h2 className="text-2xl font-extrabold text-[#3c3c3c] mb-6 flex items-center">
+                🌍 四國旅遊資訊
+            </h2>
+
+            {/* Weather Buttons Section */}
+            <div className="mb-8">
+                <h3 className="text-lg font-bold text-[#3c3c3c] mb-4 flex items-center">
+                    <InfoIcon className="w-5 h-5 mr-2 text-[#2b6e90]" />
+                    各地區天氣預報
+                </h3>
+                <div className="grid grid-cols-2 gap-3">
+                    {weatherLinks.map((link) => (
+                        <a 
+                            key={link.name}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`${link.color} text-white font-bold py-3 px-4 rounded-xl text-center shadow-md hover:opacity-90 transition active:scale-95`}
+                        >
+                            {link.name}
+                        </a>
+                    ))}
+                </div>
+            </div>
+
+            {/* Outfit Suggestions Section */}
+            <div>
+                <h3 className="text-lg font-bold text-[#3c3c3c] mb-4 flex items-center">
+                    <ClothIcon className="w-5 h-5 mr-2 text-[#d15b47]" />
+                    各地區穿搭建議
+                </h3>
+                <div className="space-y-4">
+                    {outfitData.map((item) => (
+                        <div key={item.region} className="bg-white rounded-xl shadow-md p-5 border-l-4 border-gray-100">
+                            <div className="flex justify-between items-center mb-2">
+                                <h4 className="font-bold text-[#3c3c3c] flex items-center">
+                                    <span className="text-xl mr-2">{item.icon}</span>
+                                    {item.region}
+                                </h4>
+                                <span className="bg-gray-100 text-[#757575] text-sm font-bold px-2 py-1 rounded">
+                                    {item.temp}
+                                </span>
+                            </div>
+                            <p className="text-base text-[#757575] leading-relaxed">
+                                {item.advice}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-[#3c3c3c]">
+                <p className="font-bold mb-1">💡 穿搭關鍵字：</p>
+                <p>#洋蔥式穿法 #防風外套 #薄針織 #方便脫穿 #舒適運動鞋</p>
+            </div>
+
+            <button 
+                onClick={() => setSubView(null)} 
+                className="flex items-center text-[#2b6e90] font-semibold mt-6 mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+            >
+                <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
+                返回選單
+            </button>
+        </div>
+    );
+};
+
 const PackingListContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => {
-    const [listState, setListState] = useState<PackingCategory[] | null>(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [showPowerBankDetails, setShowPowerBankDetails] = useState(false);
+    const [list, setList] = useState(initialPackingList);
 
-    useEffect(() => {
-        // Load from local storage or use initial list
-        const loadList = () => {
-            try {
-                const savedList = localStorage.getItem('userPackingList');
-                if (savedList) {
-                    setListState(JSON.parse(savedList));
-                } else {
-                    setListState(initialPackingList);
-                }
-            } catch (e) {
-                console.error("Failed to load packing list", e);
-                setListState(initialPackingList);
-            }
-            setIsLoading(false);
-        };
-
-        loadList();
-    }, []);
-
-    const toggleItem = (categoryIndex: number, itemIndex: number) => {
-        if (!listState) return;
-
-        const newListState = JSON.parse(JSON.stringify(listState));
-        const currentItem = newListState[categoryIndex].items[itemIndex];
-        currentItem.packed = !currentItem.packed;
-        
-        setListState(newListState);
-        localStorage.setItem('userPackingList', JSON.stringify(newListState));
+    const toggleItem = (catIdx: number, itemIdx: number) => {
+        const newList = [...list];
+        newList[catIdx].items[itemIdx].packed = !newList[catIdx].items[itemIdx].packed;
+        setList(newList);
     };
 
-    const totalItems = listState?.reduce((acc, cat) => acc + cat.items.length, 0) || 0;
-    const packedItems = listState?.reduce((acc, cat) => acc + cat.items.filter(item => item.packed).length, 0) || 0;
-    const completionPercentage = totalItems > 0 ? Math.round((packedItems / totalItems) * 100) : 0;
-    
+    const calculateProgress = () => {
+        const total = list.reduce((acc, cat) => acc + cat.items.length, 0);
+        const packed = list.reduce((acc, cat) => acc + cat.items.filter(i => i.packed).length, 0);
+        return total === 0 ? 0 : Math.round((packed / total) * 100);
+    };
+
     return (
         <div className="p-4 max-w-lg mx-auto">
             <button 
@@ -989,87 +1128,53 @@ const PackingListContent: React.FC<{ setSubView: (v: string | null) => void }> =
                 <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
                 返回選單
             </button>
-            <h2 className="text-2xl font-extrabold text-[#3c3c3c] mb-2">🧳 行李清單</h2>
-            <p className="text-sm text-[#757575] mb-6">點擊項目即可勾選/取消，進度將自動儲存 (Local Storage)。</p>
+
+            <h2 className="text-2xl font-extrabold text-[#3c3c3c] mb-6 flex items-center">
+                🧳 行利檢核表
+            </h2>
             
-            {isLoading || !listState ? (
-                <div className="flex items-center justify-center p-8 bg-white rounded-xl shadow-lg text-sm">
-                    <svg className="animate-spin h-5 w-5 mr-3 text-[#98c187]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" className="opacity-25"></circle><path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" className="opacity-75"></path></svg>
-                    清單載入中...
+            <PowerBankRulesSection />
+
+            <div className="bg-white p-4 rounded-xl shadow-md mb-6 sticky top-[4.5rem] z-20 border border-gray-100">
+                <div className="flex justify-between items-end mb-2">
+                    <span className="text-sm font-bold text-[#757575]">完成度</span>
+                    <span className="text-2xl font-black text-[#2b6e90]">{calculateProgress()}%</span>
                 </div>
-            ) : (
-                <>
-                    <div className="mb-6 bg-[#f1be42] bg-opacity-20 border-l-4 border-[#f1be42] p-4 rounded-lg shadow-xl">
-                        <p className="text-base font-bold text-[#3c3c3c] mb-2 flex items-center">
-                            <span className="text-lg mr-2">⚠️</span> 重要提醒
-                        </p>
-                        <ul className="space-y-2 text-sm text-[#3c3c3c]">
-                            {importantNotes.map((note, index) => (
-                                <li key={index}>
-                                    {note}
-                                    {note.includes("行動電源") && (
-                                        <button 
-                                            onClick={() => setShowPowerBankDetails(!showPowerBankDetails)}
-                                            className="ml-2 text-[#2b6e90] hover:text-[#2b6e90] font-semibold text-xs transition duration-150"
-                                        >
-                                            {showPowerBankDetails ? '▲ 隱藏細節' : '▼ 查看細節'}
-                                        </button>
-                                    )}
-                                </li>
+                <div className="w-full bg-gray-200 rounded-full h-2.5">
+                    <div className="bg-[#2b6e90] h-2.5 rounded-full transition-all duration-500" style={{ width: `${calculateProgress()}%` }}></div>
+                </div>
+            </div>
+
+            <div className="space-y-6">
+                {list.map((category, catIdx) => (
+                    <div key={catIdx} className="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div className="bg-[#f0f4f6] px-5 py-3 border-b border-gray-100 flex items-center">
+                            <span className="text-xl mr-2">{category.icon}</span>
+                            <h3 className="font-bold text-[#3c3c3c]">{category.category}</h3>
+                        </div>
+                        <div className="p-2">
+                            {category.items.map((item, itemIdx) => (
+                                <div 
+                                    key={itemIdx} 
+                                    className="flex items-center p-3 hover:bg-gray-50 rounded-lg cursor-pointer transition"
+                                    onClick={() => toggleItem(catIdx, itemIdx)}
+                                >
+                                    <div className={`w-6 h-6 rounded-md border-2 mr-3 flex items-center justify-center transition ${item.packed ? 'bg-[#2b6e90] border-[#2b6e90]' : 'border-gray-300'}`}>
+                                        {item.packed && <CheckIcon className="w-4 h-4 text-white" />}
+                                    </div>
+                                    <span className={`text-base font-medium transition ${item.packed ? 'text-gray-400 line-through' : 'text-[#3c3c3c]'}`}>
+                                        {item.name}
+                                    </span>
+                                </div>
                             ))}
-                        </ul>
-                        {showPowerBankDetails && <PowerBankRulesSection />}
-                    </div>
-
-                    <div className="mb-6 p-4 bg-white rounded-xl shadow-lg">
-                        <div className="flex justify-between items-center mb-2">
-                            <p className="text-md font-semibold text-[#757575]">準備進度：{packedItems} / {totalItems} 項</p>
-                            <p className="text-lg font-bold text-[#98c187]">{completionPercentage}%</p>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div 
-                                className="bg-[#98c187] h-2 rounded-full transition-all duration-500 ease-out" 
-                                style={{ width: `${completionPercentage}%` }}
-                            ></div>
                         </div>
                     </div>
-
-                    {/* Packing Categories */}
-                    <div className="space-y-4">
-                        {listState.map((category, catIndex) => (
-                            <div key={catIndex} className="bg-white p-4 rounded-xl shadow-lg border-t-3 border-[#98c187]">
-                                <h3 className="text-base font-bold text-[#3c3c3c] mb-3 flex items-center">
-                                    <span className="text-xl mr-2">{category.icon}</span>
-                                    {category.category}
-                                </h3>
-                                <ul className="space-y-2">
-                                    {category.items.map((item, itemIndex) => (
-                                        <li 
-                                            key={itemIndex} 
-                                            className="flex items-center cursor-pointer p-1 rounded-lg transition duration-150 hover:bg-[#f0f4f6]"
-                                            onClick={() => toggleItem(catIndex, itemIndex)}
-                                        >
-                                            <span className="w-5 h-5 mr-2 flex-shrink-0">
-                                                {item.packed ? (
-                                                    <CheckIcon className="text-[#98c187] bg-[#98c187] bg-opacity-20 rounded-full p-0.5" />
-                                                ) : (
-                                                    <SquareIcon className="text-[#757575]" />
-                                                )}
-                                            </span>
-                                            <span className={`text-md font-medium transition duration-150 ${item.packed ? 'text-[#757575] line-through' : 'text-[#3c3c3c]'}`}>
-                                                {item.name}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-                </>
-            )}
-            <button 
+                ))}
+            </div>
+            
+             <button 
                 onClick={() => setSubView(null)} 
-                className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
+                className="flex items-center text-[#2b6e90] font-semibold mt-6 mb-6 p-2 rounded-full hover:bg-white transition text-sm"
             >
                 <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
                 返回選單
@@ -1078,149 +1183,88 @@ const PackingListContent: React.FC<{ setSubView: (v: string | null) => void }> =
     );
 };
 
-const MenuPage: React.FC<{ setCurrentPage: (p: string) => void }> = ({ setCurrentPage }) => {
+const MenuButton: React.FC<{ icon: React.ReactNode, label: string, onClick: () => void, fullWidth?: boolean }> = ({ icon, label, onClick, fullWidth }) => (
+    <button 
+        onClick={onClick}
+        className={`bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center hover:shadow-lg transition duration-200 ${fullWidth ? 'col-span-2' : ''}`}
+    >
+        {icon}
+        <span className="text-[#3c3c3c] font-bold text-[16px]">{label}</span>
+    </button>
+);
+
+const ItineraryPage: React.FC<{ onDaySelect: (day: number) => void }> = ({ onDaySelect }) => {
+    return (
+        <div className="p-4 max-w-lg mx-auto">
+             {itineraryData.map((day) => (
+                 <DayCard key={day.day} dayData={day} onClick={() => onDaySelect(day.day)} />
+             ))}
+             
+             {/* Add a bottom spacer if needed */}
+             <div className="h-4"></div>
+        </div>
+    );
+};
+
+const MenuPage: React.FC<{ setCurrentPage: (page: string) => void }> = ({ setCurrentPage }) => {
     const [subView, setSubView] = useState<string | null>(null);
 
-    if (subView === 'flights') {
-        return <FlightContent setSubView={setSubView} />;
-    }
-    if (subView === 'packingList') {
-        return <PackingListContent setSubView={setSubView} />;
-    }
-    if (subView === 'accommodation') {
-        return <AccommodationContent setSubView={setSubView} />;
-    }
-    if (subView === 'worshipGuide') {
-        return <WorshipGuideContent setSubView={setSubView} />;
-    }
-    if (subView === 'legStretch') {
-        return <LegStretchContent setSubView={setSubView} />;
-    }
-    if (subView === 'survivalGuide') {
-        return <SurvivalGuideContent setSubView={setSubView} />;
-    }
-    if (subView === 'drivingGuide') {
-        return <DrivingGuideContent setSubView={setSubView} />;
-    }
+    // Render subviews based on state
+    if (subView === 'flight') return <FlightContent setSubView={setSubView} />;
+    if (subView === 'accommodation') return <AccommodationContent setSubView={setSubView} />;
+    if (subView === 'packing') return <PackingListContent setSubView={setSubView} />;
+    if (subView === 'worship') return <WorshipGuideContent setSubView={setSubView} />;
+    if (subView === 'survival') return <SurvivalGuideContent setSubView={setSubView} />;
+    if (subView === 'driving') return <DrivingGuideContent setSubView={setSubView} />;
+    if (subView === 'stretch') return <LegStretchContent setSubView={setSubView} />;
+    if (subView === 'shikoku_info') return <ShikokuInfoContent setSubView={setSubView} />;
 
     return (
-        <div className="p-4 max-w-lg mx-auto">
-            <h2 className="text-2xl font-extrabold text-[#3c3c3c] mb-6 border-b pb-3">🛠️ 旅遊工具選單</h2>
-
-            {/* Flight Overview Link */}
-            <div 
-                className="bg-white rounded-xl shadow-md p-4 mb-4 border-l-4 border-[#2b6e90] cursor-pointer hover:shadow-lg transition duration-300"
-                onClick={() => setSubView('flights')}
-            >
-                <div className="flex items-center justify-between">
-                    <div>
-                        <p className="text-lg font-bold text-[#3c3c3c]">機票與行程</p>
-                        <p className="text-sm text-[#757575]">查看 VZ566 / CI153 詳情</p>
-                    </div>
-                    <PlaneIcon className="w-6 h-6 text-[#2b6e90]" />
-                </div>
-            </div>
-
-            {/* Packing List Link */}
-            <div 
-                className="bg-white rounded-xl shadow-md p-4 mb-4 border-l-4 border-[#98c187] cursor-pointer hover:shadow-lg transition duration-300"
-                onClick={() => setSubView('packingList')}
-            >
-                <div className="flex items-center justify-between">
-                    <div>
-                        <p className="text-lg font-bold text-[#3c3c3c]">行李清單</p>
-                        <p className="text-sm text-[#757575]">打包進度追蹤與重要提醒</p>
-                    </div>
-                    <SquareCheckIcon className="w-6 h-6 text-[#98c187]" /> 
-                </div>
-            </div>
-
-            {/* Accommodation Link */}
-            <div 
-                className="bg-white rounded-xl shadow-md p-4 mb-4 border-l-4 border-[#f1be42] cursor-pointer hover:shadow-lg transition duration-300"
-                onClick={() => setSubView('accommodation')}
-            >
-                <div className="flex items-center justify-between">
-                    <div>
-                        <p className="text-lg font-bold text-[#3c3c3c]">住宿資訊</p>
-                        <p className="text-base text-[#757575]">各晚住宿地址、MapCode</p>
-                    </div>
-                    <HomeIcon className="w-6 h-6 text-[#f1be42]" /> 
-                </div>
-            </div>
-
-            {/* Survival Guide Link - New */}
-            <div 
-                className="bg-white rounded-xl shadow-md p-4 mb-4 border-l-4 border-[#d15b47] cursor-pointer hover:shadow-lg transition duration-300"
-                onClick={() => setSubView('survivalGuide')}
-            >
-                <div className="flex items-center justify-between">
-                    <div>
-                        <p className="text-lg font-bold text-[#3c3c3c]">生存指南</p>
-                        <p className="text-[14px] text-[#757575]">明信片、免稅、緊急電話</p>
-                    </div>
-                    <LifeBuoyIcon className="w-6 h-6 text-[#d15b47]" /> 
-                </div>
-            </div>
-
-            {/* Driving Guide Link - New */}
-             <div 
-                className="bg-white rounded-xl shadow-md p-4 mb-4 border-l-4 border-[#2b6e90] cursor-pointer hover:shadow-lg transition duration-300"
-                onClick={() => setSubView('drivingGuide')}
-            >
-                <div className="flex items-center justify-between">
-                    <div>
-                        <p className="text-lg font-bold text-[#3c3c3c]">行車注意</p>
-                        <p className="text-[14px] text-[#757575]">紅綠燈、速限、加油對照表</p>
-                    </div>
-                    <CarIcon className="w-6 h-6 text-[#2b6e90]" /> 
-                </div>
-            </div>
-
-            {/* Worship Guide Link */}
-            <div 
-                className="bg-white rounded-xl shadow-md p-4 mb-4 border-l-4 border-[#d15b47] cursor-pointer hover:shadow-lg transition duration-300"
-                onClick={() => setSubView('worshipGuide')}
-            >
-                <div className="flex items-center justify-between">
-                    <div>
-                        <p className="text-lg font-bold text-[#3c3c3c]">如何參拜</p>
-                        <p className="text-[14px] text-[#757575]">神社參拜禮儀、手水舍教學</p>
-                    </div>
-                    <ShrineIcon className="w-6 h-6 text-[#d15b47]" /> 
-                </div>
-            </div>
-
-            {/* Leg Stretch Link */}
-            <div 
-                className="bg-white rounded-xl shadow-md p-4 mb-4 border-l-4 border-[#6366f1] cursor-pointer hover:shadow-lg transition duration-300"
-                onClick={() => setSubView('legStretch')}
-            >
-                <div className="flex items-center justify-between">
-                    <div>
-                        <p className="text-lg font-bold text-[#3c3c3c]">腿部拉筋</p>
-                        <p className="text-sm text-[#757575]">逛街久走自救！4招舒緩</p>
-                    </div>
-                    <ActivityIcon className="w-6 h-6 text-[#6366f1]" /> 
-                </div>
-            </div>
-
+        <div className="p-4 max-w-lg mx-auto grid grid-cols-2 gap-4">
+             {/* Menu Buttons */}
+             <MenuButton 
+                icon={<PlaneIcon className="w-8 h-8 mb-2 text-[#2b6e90]" />} 
+                label="機票與行程" 
+                onClick={() => setSubView('flight')} 
+             />
+             <MenuButton 
+                icon={<HomeIcon className="w-8 h-8 mb-2 text-[#d15b47]" />} 
+                label="住宿資訊" 
+                onClick={() => setSubView('accommodation')} 
+             />
+             <MenuButton 
+                icon={<SquareCheckIcon className="w-8 h-8 mb-2 text-[#f1be42]" />} 
+                label="行李檢核表" 
+                onClick={() => setSubView('packing')} 
+             />
+             <MenuButton 
+                icon={<ShrineIcon className="w-8 h-8 mb-2 text-[#98c187]" />} 
+                label="參拜禮儀" 
+                onClick={() => setSubView('worship')} 
+             />
+             <MenuButton 
+                icon={<LifeBuoyIcon className="w-8 h-8 mb-2 text-[#d15b47]" />} 
+                label="生存指南" 
+                onClick={() => setSubView('survival')} 
+             />
+             <MenuButton 
+                icon={<CarIcon className="w-8 h-8 mb-2 text-[#2b6e90]" />} 
+                label="自駕注意" 
+                onClick={() => setSubView('driving')} 
+             />
+             <MenuButton 
+                icon={<ActivityIcon className="w-8 h-8 mb-2 text-[#98c187]" />} 
+                label="腿部伸展" 
+                onClick={() => setSubView('stretch')} 
+             />
+             <MenuButton 
+                icon={<InfoIcon className="w-8 h-8 mb-2 text-[#2b6e90]" />} 
+                label="四國資訊" 
+                onClick={() => setSubView('shikoku_info')} 
+             />
         </div>
     );
 };
-
-const ItineraryPage: React.FC<{ onDaySelect: (day: number) => void }> = ({ onDaySelect }) => (
-    <main className="max-w-lg mx-auto p-4">
-        {itineraryData.map((dayData) => (
-            <DayCard
-                key={dayData.day}
-                dayData={dayData}
-                onClick={() => onDaySelect(dayData.day)}
-            />
-        ))}
-        <div className="h-4"></div>
-    </main>
-);
 
 const App: React.FC = () => {
     const [currentPage, setCurrentPage] = useState<'itinerary' | 'menu'>('itinerary');
