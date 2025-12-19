@@ -800,7 +800,7 @@ const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> 
                      <div className="flex-shrink-0 w-8 h-8 bg-blue-500 rounded text-white flex items-center justify-center text-lg">↩️</div>
                      <div className="ml-3">
                         <p className="font-bold text-[#3c3c3c]">右轉車需禮讓</p>
-                        <p className="text-sm text-[#757575]">左轉車優先 > 直行車 > 右轉車。</p>
+                        <p className="text-sm text-[#757575]">左轉車優先 → 直行車 → 右轉車。</p>
                      </div>
                 </li>
                 <li className="flex items-start">
