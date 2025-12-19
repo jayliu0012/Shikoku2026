@@ -1,12 +1,22 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shikoku 2026 Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>四國 2026 旅遊儀表板</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2b6e90" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="四國2026" />
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/826/826070.png" />
+    <link rel="manifest" href="/manifest.json" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      /* Custom scrollbar for webkit */
+      /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 6px;
         height: 6px;
@@ -21,18 +31,22 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #999;
       }
+      /* Prevent elastic bounce on mobile */
+      body {
+        overscroll-behavior-y: none;
+      }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/"
-  }
-}
-</script>
-</head>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/"
+      }
+    }
+    </script>
+  </head>
   <body class="bg-gray-50 text-gray-900">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
