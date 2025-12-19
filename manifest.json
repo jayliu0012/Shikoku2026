@@ -10,13 +10,13 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "https://github.com/jayliu0012/Shikoku2026/blob/main/whale.png",
+      "src": "https://raw.githubusercontent.com/jayliu0012/Shikoku2026/main/whale.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://github.com/jayliu0012/Shikoku2026/blob/main/whale.png",
+      "src": "https://raw.githubusercontent.com/jayliu0012/Shikoku2026/main/whale.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
