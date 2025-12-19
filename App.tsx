@@ -637,9 +637,9 @@ const SurvivalGuideContent: React.FC<{ setSubView: (v: string | null) => void }>
                 <div className="space-y-4">
                     <div>
                         <p className="font-bold text-[#3c3c3c] text-base">全球海外急難救助 (國泰)</p>
-                        <p className="text-base text-[#757575] mb-1">電話：+886-2-27551258</p>
+                        <p className="text-sm text-[#757575] mb-1">電話：+886-2-27551258</p>
                         <div className="mt-1">
-                            <label className="text-base font-bold text-[#98c187] uppercase">保險單號</label>
+                            <label className="text-xs font-bold text-[#98c187] uppercase">保險單號</label>
                             <input 
                                 type="text" 
                                 value={cathayPolicy}
@@ -651,9 +651,9 @@ const SurvivalGuideContent: React.FC<{ setSubView: (v: string | null) => void }>
                     </div>
                     <div className="pt-3 border-t border-gray-100">
                         <p className="font-bold text-[#3c3c3c] text-base">東京海上日動</p>
-                        <p className="text-base text-[#757575] mb-1">電話：+81-3-67582444</p>
+                        <p className="text-sm text-[#757575] mb-1">電話：+81-3-67582444</p>
                         <div className="mt-1">
-                            <label className="text-base font-bold text-[#98c187] uppercase">保險單號</label>
+                            <label className="text-xs font-bold text-[#98c187] uppercase">保險單號</label>
                             <input 
                                 type="text" 
                                 value={tokioPolicy}
