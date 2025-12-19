@@ -6,7 +6,7 @@ import {
   TrainIcon, UtensilsIcon, ShoppingBagIcon, TicketIcon, BedIcon,
   FuelIcon, ParkingIcon, CameraIcon, ShrineIcon, MailIcon, HotSpringIcon,
   BusIcon, ShipIcon, CableCarIcon, MusicIcon, ActivityIcon, LifeBuoyIcon, CarIcon,
-  InfoIcon, ClothIcon
+  InfoIcon, ClothIcon, StarIcon
 } from './components/Icons';
 import { 
   initialPackingList, 
@@ -737,7 +737,7 @@ const CollapsibleSection: React.FC<{
 const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => (
     <div className="p-4 max-w-lg mx-auto">
         <button
-            onClick={() => setSubView(null)}
+            onClick={setSubView.bind(null, null)}
             className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
         >
             <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
@@ -914,7 +914,7 @@ const LegStretchContent: React.FC<{ setSubView: (v: string | null) => void }> = 
             </button>
 
             <h2 className="text-2xl font-extrabold text-[#3c3c3c] mb-6 flex items-center">
-                🦵 逛一整天腳底快炸掉？
+                ⭐ 逛一整天腳底快炸掉？
             </h2>
 
             {/* Threads Button */}
@@ -925,7 +925,7 @@ const LegStretchContent: React.FC<{ setSubView: (v: string | null) => void }> = 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-full bg-black text-white font-bold py-4 rounded-xl shadow-lg hover:bg-gray-800 transition duration-300"
                 >
-                    <ActivityIcon className="w-5 h-5 mr-2 text-white" />
+                    <StarIcon className="w-5 h-5 mr-2 text-white" />
                     <span>前往 Threads 觀看教學影片</span>
                 </a>
                  <p className="text-xs text-gray-500 text-center mt-2">
@@ -993,12 +993,18 @@ const LegStretchContent: React.FC<{ setSubView: (v: string | null) => void }> = 
 };
 
 const ShikokuInfoContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => {
-    const weatherLinks = [
-        { name: '香川天氣', url: 'https://shikoku-guide.com/tw/information/kagawawheather/', color: 'bg-[#2b6e90]' },
-        { name: '德島天氣', url: 'https://shikoku-guide.com/tw/information/tokushimawheather/', color: 'bg-[#d15b47]' },
-        { name: '愛媛天氣', url: 'https://shikoku-guide.com/tw/information/ehimewheather/', color: 'bg-[#f1be42]' },
-        { name: '高知天氣', url: 'https://shikoku-guide.com/tw/information/kochiwheather/', color: 'bg-[#98c187]' }
-    ];
+    useEffect(() => {
+        const scriptId = 'tomorrow-sdk';
+        if (!document.getElementById(scriptId)) {
+            const fjs = document.getElementsByTagName('script')[0];
+            const js = document.createElement('script');
+            js.id = scriptId;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+            fjs.parentNode?.insertBefore(js, fjs);
+        } else if ((window as any).__TOMORROW__) {
+            (window as any).__TOMORROW__.renderWidget();
+        }
+    }, []);
 
     const outfitData = [
         {
@@ -1041,24 +1047,34 @@ const ShikokuInfoContent: React.FC<{ setSubView: (v: string | null) => void }> =
                 🌍 四國旅遊資訊
             </h2>
 
-            {/* Weather Buttons Section */}
+            {/* Weather Widget Section */}
             <div className="mb-8">
                 <h3 className="text-lg font-bold text-[#3c3c3c] mb-4 flex items-center">
                     <InfoIcon className="w-5 h-5 mr-2 text-[#2b6e90]" />
                     各地區天氣預報
                 </h3>
-                <div className="grid grid-cols-2 gap-3">
-                    {weatherLinks.map((link) => (
-                        <a 
-                            key={link.name}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`${link.color} text-white font-bold py-3 px-4 rounded-xl text-center shadow-md hover:opacity-90 transition active:scale-95`}
-                        >
-                            {link.name}
-                        </a>
-                    ))}
+                
+                <div className="tomorrow"
+                   data-location-id=""
+                   data-language="EN"
+                   data-unit-system="METRIC"
+                   data-skin="light"
+                   data-widget-type="upcoming"
+                   style={{ paddingBottom: '22px', position: 'relative' }}
+                >
+                  <a
+                    href="https://weather.tomorrow.io/"
+                    rel="nofollow noopener noreferrer"
+                    target="_blank"
+                    style={{ position: 'absolute', bottom: 0, transform: 'translateX(-50%)', left: '50%' }}
+                  >
+                    <img
+                      alt="Powered by Tomorrow.io"
+                      src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+                      width="250"
+                      height="18"
+                    />
+                  </a>
                 </div>
             </div>
 
@@ -1253,13 +1269,13 @@ const MenuPage: React.FC<{ setCurrentPage: (page: string) => void }> = ({ setCur
                 onClick={() => setSubView('driving')} 
              />
              <MenuButton 
-                icon={<ActivityIcon className="w-8 h-8 mb-2 text-[#98c187]" />} 
+                icon={<StarIcon className="w-8 h-8 mb-2 text-[#98c187]" />} 
                 label="腿部伸展" 
                 onClick={() => setSubView('stretch')} 
              />
              <MenuButton 
                 icon={<InfoIcon className="w-8 h-8 mb-2 text-[#2b6e90]" />} 
-                label="四國資訊" 
+                label="天氣資訊" 
                 onClick={() => setSubView('shikoku_info')} 
              />
         </div>
@@ -1305,10 +1321,10 @@ const App: React.FC = () => {
             <header className="bg-white border-b border-gray-200 shadow-sm p-4 sticky top-0 z-30">
                 <div className="max-w-lg mx-auto">
                     <h1 className="text-xl font-extrabold text-[#2b6e90]">
-                        2026 四國9日自駕遊
+                        2026 四國自駕遊
                     </h1>
                     <p className="text-xs text-[#757575] mt-0.5">
-                        協同規劃儀表板
+                        Google AI Studio協同規劃儀表板
                     </p>
                 </div>
             </header>
