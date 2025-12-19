@@ -1,8 +1,8 @@
 
 const CACHE_NAME = 'shikoku-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
+  './',
+  './index.html',
   'https://cdn.tailwindcss.com'
 ];
 
