@@ -150,7 +150,7 @@ export const itineraryData: ItineraryDay[] = [
     { 
         day: 1, 
         date: "2026/03/28", 
-        theme: "大阪：城市漫遊與轉乘日", 
+        theme: "城市漫遊與轉乘", 
         color: "border-[#f1be42]", 
         highlight: "泰國越捷 VZ566 11:00 抵達 KIX，難波/心齋橋購物。", 
         stops: [
@@ -235,6 +235,7 @@ export const itineraryData: ItineraryDay[] = [
                 name: "南海難波",
                 durationLabel: "(停留 00時30分)",
                 mapUrl: "https://maps.app.goo.gl/FqjshYKq5CnPxBDT7",
+                storageUrl: "https://maps.app.goo.gl/he44jc3v25impeKq6",
                 note: "備註：\n📝堺筋線:\n日本橋（大阪） → 天神橋筋六丁目(6站)\n💴¥240",
                 transport: { mode: "🚶+🚃", time: "25分" },
                 category: "🚉"
@@ -278,7 +279,7 @@ export const itineraryData: ItineraryDay[] = [
     { 
         day: 2, 
         date: "2026/03/29", 
-        theme: "高松：啟程、烏龍麵與庭園之美", 
+        theme: "啟程、烏龍麵與庭園之美", 
         color: "border-[#2b6e90]", 
         highlight: "高速巴士至高松、租車、烏龍麵、栗林公園、骨付鳥。", 
         stops: [
@@ -392,7 +393,7 @@ export const itineraryData: ItineraryDay[] = [
     { 
         day: 3, 
         date: "2026/03/30", 
-        theme: "小豆島：絕景與浪漫渡輪日", 
+        theme: "小豆島絕景", 
         color: "border-[#d15b47]", 
         highlight: "渡輪日、寒霞溪、橄欖公園、天使之路 (需確認潮汐)。", 
         stops: [
@@ -563,7 +564,7 @@ export const itineraryData: ItineraryDay[] = [
     { 
         day: 4, 
         date: "2026/03/31", 
-        theme: "秘境與絕景：祖谷藤蔓橋與天空鳥居", 
+        theme: "秘境：祖谷藤蔓橋與天空鳥居", 
         color: "border-[#98c187]", 
         highlight: "大步危峽谷、祖谷藤蔓橋、雲邊寺、高屋神社、父母濱日落。", 
         stops: [
@@ -845,7 +846,7 @@ export const itineraryData: ItineraryDay[] = [
     { 
         day: 6, 
         date: "2026/04/02", 
-        theme: "松山・宇和島：雙城古城巡禮", 
+        theme: "雙城古城巡禮", 
         color: "border-[#d15b47]", // Theme Red
         highlight: "松山城、萬翠莊、宇和島城、海鮮市場。", 
         stops: [
@@ -1011,7 +1012,7 @@ export const itineraryData: ItineraryDay[] = [
     { 
         day: 7, 
         date: "2026/04/03", 
-        theme: "高知巡禮：市場美食與莫內庭園", 
+        theme: "美食、企鵝與花園", 
         color: "border-[#f1be42]", // Theme Yellow
         highlight: "弘人市場、桂濱水族館、莫內庭園、長距離移動至德島。", 
         stops: [
