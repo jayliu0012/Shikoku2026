@@ -993,18 +993,31 @@ const LegStretchContent: React.FC<{ setSubView: (v: string | null) => void }> = 
 };
 
 const ShikokuInfoContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => {
+    const [selectedLocId, setSelectedLocId] = useState('064427'); // Default: Kagawa
+
+    const weatherRegions = [
+        { id: '064427', name: '香川' },
+        { id: '064497', name: '德島' },
+        { id: '063941', name: '愛媛' },
+        { id: '2240297', name: '高知' }
+    ];
+
     useEffect(() => {
         const scriptId = 'tomorrow-sdk';
-        if (!document.getElementById(scriptId)) {
-            const fjs = document.getElementsByTagName('script')[0];
-            const js = document.createElement('script');
-            js.id = scriptId;
-            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
-            fjs.parentNode?.insertBefore(js, fjs);
-        } else if ((window as any).__TOMORROW__) {
-            (window as any).__TOMORROW__.renderWidget();
-        }
-    }, []);
+        const loadOrUpdateWidget = () => {
+            if (!document.getElementById(scriptId)) {
+                const fjs = document.getElementsByTagName('script')[0];
+                const js = document.createElement('script');
+                js.id = scriptId;
+                js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+                fjs.parentNode?.insertBefore(js, fjs);
+            } else if ((window as any).__TOMORROW__) {
+                (window as any).__TOMORROW__.renderWidget();
+            }
+        };
+
+        loadOrUpdateWidget();
+    }, [selectedLocId]);
 
     const outfitData = [
         {
@@ -1053,9 +1066,26 @@ const ShikokuInfoContent: React.FC<{ setSubView: (v: string | null) => void }> =
                     <InfoIcon className="w-5 h-5 mr-2 text-[#2b6e90]" />
                     各地區天氣預報
                 </h3>
+
+                {/* Region Selector Tabs */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                    {weatherRegions.map((region) => (
+                        <button
+                            key={region.id}
+                            onClick={() => setSelectedLocId(region.id)}
+                            className={`px-6 py-2 rounded-full font-bold text-base transition-all duration-200 border ${
+                                selectedLocId === region.id
+                                    ? 'bg-[#2b6e90] text-white border-[#2b6e90] shadow-md'
+                                    : 'bg-white text-gray-500 border-gray-200 hover:border-[#2b6e90]'
+                            }`}
+                        >
+                            {region.name}
+                        </button>
+                    ))}
+                </div>
                 
-                <div className="tomorrow"
-                   data-location-id=""
+                <div key={selectedLocId} className="tomorrow"
+                   data-location-id={selectedLocId}
                    data-language="EN"
                    data-unit-system="METRIC"
                    data-skin="light"
