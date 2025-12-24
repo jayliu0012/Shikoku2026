@@ -310,15 +310,15 @@ export const itineraryData: ItineraryDay[] = [
             {
                 time: "11:05",
                 name: "平成租車高松車站前店",
-                durationLabel: "(停留 01時00分)",
+                durationLabel: "(停留 00時30分)",
                 mapUrl: "https://maps.app.goo.gl/zCnVfvDgy9bnhrB2A",
                 transport: { mode: "🚗", time: "11min" },
                 category: "🧍"
             },
             {
-                time: "12:16",
+                time: "11:46",
                 name: "手打十段うどんバカ一代",
-                durationLabel: "(停留 01時20分)",
+                durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/AYvf4cQYFPxuAWwM7",
                 note:"備註：\n📝Map code: 60 607 011*48\n🅿あなぶきパーク多賀町パーキング\n💴¥100/30min",
                 parkingUrl: "https://maps.app.goo.gl/c2nUZh16ivDtgyKs7",
@@ -326,9 +326,9 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "13:48",
+                time: "13:20",
                 name: "栗林公園",
-                durationLabel: "(停留 02時20分)",
+                durationLabel: "(停留 02時00分)",
                 mapUrl: "https://maps.app.goo.gl/AYvf4cQYFPxuAWwM7",
                 note: "備註：\n💴門票:¥410/人\n🅿栗林公園 駐車場\n📝Map code: 60 545 891*36\n💴¥100/25min",
                 parkingUrl: "https://maps.app.goo.gl/c2nUZh16ivDtgyKs7",
@@ -336,18 +336,18 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🏞️"
             },
             {
-                time: "16:30",
+                time: "15:40",
                 name: "時尚中心 思夢樂鹿角店",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/ZHD7GTgQtJUxRuah6",
                 note: "備註：\n🅿思夢樂附設\n📝Map code: 60 484 016*07\n💴免費",
-                transport: { mode: "🚗", time: "16min" },
+                transport: { mode: "🚗+🚶", time: "25min" },
                 category: "🛍️"
             },
             {
-                time: "17:45",
+                time: "17:25",
                 name: "骨付鳥 一鶴 高松店",
-                durationLabel: "(停留 01時10分)",
+                durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/dm8qZsERDKTztRGu6",
                 note: "備註：\n🅿丸亀町町営第4駐車場\n📝Map code: 60 606 454*70\n💴¥500/5h",
                 parkingUrl: "https://maps.app.goo.gl/Kfeq77aV4R2s5bYS6",
@@ -355,25 +355,25 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "18:58",
+                time: "18:35",
                 name: "セブン-イレブン高松丸亀町店",
-                durationLabel: "",
+                durationLabel: "(停留 00時30分)",
                 mapUrl: "https://maps.app.goo.gl/7cqYFFK8Js4gxqEf8",
                 note: "備註：\n📝郵票(きって)¥100/張",
                 transport: { mode: "🚶", time: "1min" },
                 category: "🏪"
             },
             {
-                time: "19:19",
+                time: "19:00",
                 name: "薬 マツモトキヨシ高松丸亀町店",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/X7rK3ZaXRsDunJaJA",
-                note: "備註：\n📝暈船藥等藥品",
+                note: "備註：\n📝暈船藥等",
                 transport: { mode: "🚶", time: "4min" },
                 category: "💊"
             },
             {
-                time: "20:23",
+                time: "20:25",
                 name: "丸亀町町営第4駐車場",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/Kfeq77aV4R2s5bYS6",
@@ -381,7 +381,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🅿️"
             },
             {
-                time: "20:41",
+                time: "20:40",
                 name: "Happy House - TAKAMATSU",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/2ivAUEN5ZpzGWbsD9",
@@ -398,10 +398,10 @@ export const itineraryData: ItineraryDay[] = [
         highlight: "渡輪日、寒霞溪、橄欖公園、天使之路 (需確認潮汐)。", 
         stops: [
             {
-                time: "06:20",
+                time: "06:00",
                 name: "Happy House - TAKAMATSU",
                 durationLabel: "",
-                transport: { mode: "🚗", time: "10min" },
+                transport: { mode: "🚗+🚶", time: "10min" },
                 category: "🛏️"
             },
             {
@@ -415,9 +415,9 @@ export const itineraryData: ItineraryDay[] = [
                 category: "⚓"
             },
             {
-                time: "06:58",
+                time: "06:35",
                 name: "小豆島|土庄行きフェリー乗船口",
-                durationLabel: "(停留 00時22分)",
+                durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/1DZX4E6Rvhnjii1z5",
                 note: "備註：\n📝7:20發船\n💴¥1330/人(來回)",
                 transport: { mode: "🚢", time: "1hr" },
@@ -441,33 +441,33 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🚏"
             },
             {
-                time: "09:06",
+                time: "09:02",
                 name: "草壁港",
-                durationLabel: "(停留 00時14分)",
+                durationLabel: "(停留 00時18分)",
                 mapUrl: "https://maps.app.goo.gl/enP7ZtV2TW4NjRtS6",
                 note: "備註：\n📝寒霞溪急行線:\n09:20草壁港 → 10:01紅雲亭||\n11:10草壁港 → 11:21紅雲亭",
                 transport: { mode: "🚍", time: "11min" },
                 category: "🚏"
             },
             {
-                time: "09:31",
+                time: "10:01",
                 name: "寒霞溪纜車 紅雲亭站",
-                durationLabel: "(停留 00時53分)",
+                durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/S5RuytkHPGVBZo979",
                 note: "備註：\n💴¥2340/人(來回)",
                 transport: { mode: "🚡", time: "10min" },
                 category: "🚏"
             },
             {
-                time: "10:34",
+                time: "10:30",
                 name: "寒霞溪",
-                durationLabel: "(停留 02時02分)",
+                durationLabel: "(停留 02時00分)",
                 mapUrl: "https://maps.app.goo.gl/erzzmTqHjrBHFTzY8",
-                transport: { mode: "🚶", time: "10min" },
+                transport: { mode: "🚡", time: "10min" },
                 category: "🏞️"
             },
             {
-                time: "12:46",
+                time: "12:40",
                 name: "寒霞溪纜車 紅雲亭站",
                 durationLabel: "(停留 00時04分)",
                 mapUrl: "https://maps.app.goo.gl/S5RuytkHPGVBZo979",
@@ -505,7 +505,7 @@ export const itineraryData: ItineraryDay[] = [
             {
                 time: "17:08",
                 name: "土庄港1号岸壁",
-                durationLabel: "(停留 00時22分)",
+                durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/tTn7gsKE8fV5C8ki7",
                 note: "備註：\n📝17:30發船||18:40發船",
                 transport: { mode: "🚢", time: "1hr" },
@@ -514,21 +514,22 @@ export const itineraryData: ItineraryDay[] = [
             {
                 time: "18:30",
                 name: "小豆島|土庄行きフェリー乗船口",
-                durationLabel: "(停留 00時15分)",
+                durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/1DZX4E6Rvhnjii1z5",
                 transport: { mode: "🚶", time: "2min" },
                 category: "⚓"
             },
             {
-                time: "18:49",
+                time: "18:35",
                 name: "高松駅前広場地下駐車場",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/8oSamJPJqDHFvoVYA",
-                transport: { mode: "🚗", time: "10min" },
+                note: "備註：\n📝マリタイムプラザ高松",
+                transport: { mode: "🚗", time: "1hr" },
                 category: "🅿️"
             },
             {
-                time: "19:59",
+                time: "20:00",
                 name: "325番地",
                 durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/qKSvDzaZz5FvERfr9",
@@ -537,7 +538,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "20:16",
+                time: "20:20",
                 name: "MAWARU",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/ieg54ETPjDopiMHt5",
@@ -545,15 +546,15 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "21:22",
+                time: "21:30",
                 name: "Lawson Niocho Shop",
-                durationLabel: "(停留 01時00分)",
+                durationLabel: "(停留 00時30分)",
                 mapUrl: "https://maps.app.goo.gl/1XFU7jzYiUNMveS46",
                 transport: { mode: "🚶", time: "5min" },
                 category: "🏪"
             },
             {
-                time: "22:29",
+                time: "22:05",
                 name: "325番地",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/qKSvDzaZz5FvERfr9",
@@ -576,25 +577,25 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "08:43",
+                time: "08:50",
                 name: "大步危峽谷觀光遊覽船",
-                durationLabel: "(停留 01時17分)",
+                durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/zn6R4ap7Qtdi7St7A",
                 note: "備註：\n📝Map Code：357 151 826*11\n💴¥1500/人(來回)\n🅿觀光船附設\n💴免費",
                 transport: { mode: "🚗", time: "16min" },
                 category: "🚢"
             },
             {
-                time: "10:16",
+                time: "10:00",
                 name: "ENEOS かずら橋 SS",
-                durationLabel: "(停留 00時30分)",
+                durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/BrwrwQxPuvPxhxGK7",
                 note: "備註：\n📝Map Code：357 188 401*22",
-                transport: { mode: "🚗", time: "6min" },
+                transport: { mode: "🚗+🚶", time: "10min" },
                 category: "⛽"
             },
             {
-                time: "10:51",
+                time: "10:30",
                 name: "祖谷のかずら橋管理小屋",
                 durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/m47yUdoA3czX1oMT6",
@@ -604,7 +605,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🅿️"
             },
             {
-                time: "11:32",
+                time: "10:50",
                 name: "祖谷藤蔓橋",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/6JgqyHxz6ZoufjbRA",
@@ -612,7 +613,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🏞️"
             },
             {
-                time: "12:35",
+                time: "11:55",
                 name: "やま里",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/kVzSR6KTBgfMCSZP7",
@@ -620,7 +621,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "13:38",
+                time: "13:00",
                 name: "かずら橋 渡り口駐車場",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/cfdLER9teSjFkc9P7",
@@ -628,7 +629,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🅿️"
             },
             {
-                time: "15:23",
+                time: "14:40",
                 name: "高屋神社（本宮）",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/56EvWYLbpPH4129E6",
@@ -638,7 +639,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "⛩️"
             },
             {
-                time: "17:14",
+                time: "16:15",
                 name: "父母濱海岸",
                 durationLabel: "(停留 02時00分)",
                 mapUrl: "https://maps.app.goo.gl/xE5tHKgyV9ct8uscA",
@@ -648,7 +649,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🌅"
             },
             {
-                time: "19:26",
+                time: "18:30",
                 name: "arigatouya 3 minutes by car to C",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/qKSvDzaZz5FvERfr9",
@@ -657,7 +658,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "19:30",
+                time: "18:50",
                 name: "鮨酒場 南",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/csCQa8HWB3tV4Ybg7",
@@ -665,7 +666,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "20:35",
+                time: "20:00",
                 name: "Lawson Niocho Shop",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/1XFU7jzYiUNMveS46",
@@ -673,7 +674,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🏪"
             },
             {
-                time: "21:10",
+                time: "20:30",
                 name: "arigatouya 3 minutes by car to C",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/qKSvDzaZz5FvERfr9",
@@ -696,16 +697,16 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "08:02",
+                time: "07:15",
                 name: "ENEOS 仁尾 SS",
-                durationLabel: "(停留 00時30分)",
+                durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/f1vBiCDokJ5r5Zuw6",
                 note: "備註：\n📝Map Code：77 393 150*55\n📝レギュラー(紅色)",
                 transport: { mode: "🚗", time: "35min" },
                 category: "⛽"
             },
             {
-                time: "09:05",
+                time: "08:05",
                 name: "琴平公園駐車場",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/ia34DVa5jsSGzjsz9",
@@ -714,7 +715,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🅿"
             },
             {
-                time: "09:24",
+                time: "08:20",
                 name: "金刀比羅宮 大門",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/LWxdVdMXkuvNhd6v7",
@@ -723,7 +724,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "📷"
             },
             {
-                time: "09:47",
+                time: "08:45",
                 name: "金刀比羅宮",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/TuUx1tuMobYrWFyo6",
@@ -731,7 +732,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "⛩️"
             },
             {
-                time: "10:53",
+                time: "10:00",
                 name: "神椿",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/dvM31LBwcY2mvdwQ6",
@@ -739,7 +740,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "12:07",
+                time: "11:30",
                 name: "琴平公園駐車場",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/ia34DVa5jsSGzjsz9",
@@ -747,7 +748,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🅿"
             },
             {
-                time: "14:12",
+                time: "11:40",
                 name: "栄光酒造",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/wViy53FWWiFaidcq8",
@@ -757,7 +758,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛍️"
             },
             {
-                time: "15:14",
+                time: "13:00",
                 name: "湯山郵便局",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/qDXe3LUeBdWZh946A",
@@ -766,7 +767,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🏣"
             },
             {
-                time: "16:30",
+                time: "14:20",
                 name: "放生園",
                 durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/fkBKoFgqQCRoAUCT9",
@@ -776,7 +777,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "📷"
             },
             {
-                time: "16:50",
+                time: "14:35",
                 name: "坊っちゃん列車",
                 durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/yupEvQoxeLs9xfRS7",
@@ -784,7 +785,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "📷"
             },
             {
-                time: "17:06",
+                time: "14:50",
                 name: "愛媛の食卓1970",
                 durationLabel: "(停留 00時30分)",
                 mapUrl: "https://maps.app.goo.gl/qYfHfWUgVj9Y4tX69",
@@ -792,7 +793,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "17:37",
+                time: "15:20",
                 name: "つぼや菓子舗",
                 durationLabel: "(停留 00時30分)",
                 mapUrl: "https://maps.app.goo.gl/88fBM54ZDjnqmqiSA",
@@ -801,7 +802,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "18:08",
+                time: "16:00",
                 name: "道後温泉別館 飛鳥乃湯泉",
                 durationLabel: "(停留 01時30分)",
                 mapUrl: "https://maps.app.goo.gl/jooFV8dHv4xKc8Yu6",
@@ -810,7 +811,15 @@ export const itineraryData: ItineraryDay[] = [
                 category: "♨️"
             },
             {
-                time: "19:47",
+                time: "17:35",
+                name: "ローソン 松山道後駅前店",
+                durationLabel: "",
+                mapUrl: "https://maps.app.goo.gl/r3kVxL85DchSFPhp7",
+                transport: { mode: "🚶", time: "3min" },
+                category: "🏪"
+            },
+            {
+                time: "18:10",
                 name: "エコロパーク 道後温泉前第1駐車場",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/MATR6qjhJByNJXEUA",
@@ -818,7 +827,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🅿"
             },
             {
-                time: "20:14",
+                time: "18:30",
                 name: "木の家ゲストハウス松山本館",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/bHZsfw6WmcXYgKHm7",
@@ -827,7 +836,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "20:30",
+                time: "19:00",
                 name: "丸源拉麵",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/QakGxiXS8ztEryWh7",
@@ -835,7 +844,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "22:57",
+                time: "20:15",
                 name: "木の家ゲストハウス松山本館",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/bHZsfw6WmcXYgKHm7",
@@ -858,16 +867,16 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "07:05",
+                time: "07:15",
                 name: "ENEOS 松山南 SS",
-                durationLabel: "(停留 00時30分)",
+                durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/6AY7JBAFweeuAn8r5",
                 note: "備註：\n📝Map Code：53 258 191*36\n📝レギュラー(紅色)",
                 transport: { mode: "🚗", time: "15min" },
                 category: "⛽"
             },
             {
-                time: "07:46",
+                time: "07:45",
                 name: "濱商パークしののめ",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/vva5x9ZjuBhZeHP9A",
@@ -876,7 +885,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🅿️"
             },
             {
-                time: "08:15",
+                time: "08:05",
                 name: "マクドナルド",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/HmTpNHfP3nSxkCwe9",
@@ -884,16 +893,16 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "09:19",
+                time: "09:10",
                 name: "萬翠莊舊管理人舎",
-                durationLabel: "(停留 01時00分)",
+                durationLabel: "(停留 00時30分)",
                 mapUrl: "https://maps.app.goo.gl/eASaxspQws3xyZ698",
-                note: "備註：\n💴¥400",
+                note: "備註：\n門票💴¥400/人",
                 transport: { mode: "🚶", time: "11min" },
                 category: "📷"
             },
             {
-                time: "10:28",
+                time: "09:55",
                 name: "松山城 黒門口登城道",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/v27DjsP2USX7eMox8",
@@ -901,7 +910,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🏞️"
             },
             {
-                time: "10:48",
+                time: "10:15",
                 name: "松山城",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/srxvAV9QaLZm98tA8",
@@ -909,7 +918,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "📷"
             },
             {
-                time: "11:55",
+                time: "11:25",
                 name: "松山城_長者ヶ平站",
                 durationLabel: "",
                 note: "備註：\n💴纜車：¥270/人(單趟)",
@@ -917,14 +926,14 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🚡"
             },
             {
-                time: "12:10",
+                time: "11:35",
                 name: "松山城_東雲口站",
                 durationLabel: "",
                 transport: { mode: "🚶", time: "3min" },
                 category: "🚡"
             },
             {
-                time: "12:18",
+                time: "11:45",
                 name: "濱商パークしののめ",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/vva5x9ZjuBhZeHP9A",
@@ -932,16 +941,16 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🅿️"
             },
             {
-                time: "12:40",
+                time: "12:10",
                 name: "太陽市",
-                durationLabel: "(停留 01時20分)",
+                durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/HSQKM2NCEMSKGixa6",
                 note: "備註：\n📝Map Code：53 285 824*78\n🅿賣場附設\n💴免費",
-                transport: { mode: "🚗", time: "1hr30min" },
+                transport: { mode: "🚗+🚶", time: "1hr30min" },
                 category: "🍽️"
             },
             {
-                time: "15:29",
+                time: "14:50",
                 name: "藩老桑折氏武家長屋門",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/2qKmLgFHtNVx4HGy9",
@@ -951,7 +960,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🏞️"
             },
             {
-                time: "15:40",
+                time: "15:00",
                 name: "宇和島城",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/mBe7fBXqWgcKhkj56",
@@ -959,7 +968,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "📷"
             },
             {
-                time: "16:50",
+                time: "16:10",
                 name: "市営 城山下有料駐車場",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/jAs5cbzNkBKYo57u6",
@@ -967,16 +976,16 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🅿️"
             },
             {
-                time: "16:55",
+                time: "16:15",
                 name: "道の駅 うわじま きさいや広場",
-                durationLabel: "(停留 01時00分)",
+                durationLabel: "(停留 01時30分)",
                 mapUrl: "https://maps.app.goo.gl/p9Q4knVmycWpBBsq8",
                 note: "備註：\n🅿道の駅附設\n📝Map Code：176 187 280*68\n💴免費",
                 transport: { mode: "🚗", time: "35min" },
                 category: "🛍️"
             },
             {
-                time: "18:30",
+                time: "18:25",
                 name: "entohouse BAR&GUESTHOUSE",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/mxMYey9ZQL1QrgUP7",
@@ -985,7 +994,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "19:00",
+                time: "18:50",
                 name: "麺や 一心",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/b3D1Kg3SdtZUPxRy6",
@@ -1001,7 +1010,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🏪"
             },
             {
-                time: "21:00",
+                time: "20:30",
                 name: "entohouse BAR&GUESTHOUSE",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/mxMYey9ZQL1QrgUP7",
@@ -1024,55 +1033,55 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "08:03",
+                time: "07:15",
                 name: "apollstation 野村 SS (岡田石油店)",
-                durationLabel: "(停留 00時30分)",
+                durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/hRTJpM5KrEsiSYQr9",
                 note: "備註：\n📝Map Code：176 737 552*54\n📝レギュラー(紅色)",
-                transport: { mode: "🚗+🚶", time: "2hr20min" },
+                transport: { mode: "🚗+🚶", time: "2hr35min" },
                 category: "⛽"
             },
             {
-                time: "10:50",
+                time: "10:00",
                 name: "弘人市場",
-                durationLabel: "(停留 01時00分)",
+                durationLabel: "(停留 01時30分)",
                 mapUrl: "https://maps.app.goo.gl/j4a6D2GHqtnGCrwL6",
                 note: "備註：\n🅿APパーク 高知\n📝Map Code：73 184 675*88\n💴¥100/20min",
                 parkingUrl: "https://maps.app.goo.gl/AYv84yEnAeZqTgqM6",
-                transport: { mode: "🚗+🚶", time: "35min" },
+                transport: { mode: "🚗+🚶", time: "45min" },
                 category: "🍽️"
             },
             {
-                time: "12:45",
+                time: "12:20",
                 name: "桂濱水族館",
-                durationLabel: "(停留 01時00分)",
+                durationLabel: "(停留 01時30分)",
                 mapUrl: "https://maps.app.goo.gl/j4a6D2GHqtnGCrwL6",
-                note: "備註：\n🅿龍馬駐車場\n📝Map Code：858 279 451*16\n💴¥200/次",
+                note: "備註：\n💴門票：¥1600/人\n🅿龍馬駐車場\n📝Map Code：858 279 451*16\n💴¥200/次",
                 parkingUrl: "https://maps.app.goo.gl/Fi2C5H1i7yqiyr617",
                 transport: { mode: "🚗+🚶", time: "1hr15min" },
                 category: "📷"
             },
             {
-                time: "15:26",
+                time: "15:05",
                 name: "莫內庭園",
-                durationLabel: "(停留 01時00分)",
+                durationLabel: "(停留 01時30分)",
                 mapUrl: "https://maps.app.goo.gl/a7jKj2nQFMGTAzTe9",
-                note: "備註：\n🅿北川村モネの庭マルモッタン駐車場\n📝Map Code：421 664 310*07\n💴免費",
+                note: "備註：\n💴門票：¥1000/人\n🅿北川村モネの庭マルモッタン駐車場\n📝Map Code：421 664 310*07\n💴免費",
                 parkingUrl: "https://maps.app.goo.gl/e4MG94PWK2ffJLUr6",
                 transport: { mode: "🚗", time: "1hr40min" },
                 category: "📷"
             },
             {
-                time: "18:21",
+                time: "18:20",
                 name: "ENEOS 牟岐 SS",
-                durationLabel: "(停留 00時30分)",
+                durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/FMyPZ68ew2WRy5i2A",
                 note: "備註：\n📝Map Code：427 620 289*28\n📝レギュラー(紅色)",
                 transport: { mode: "🚗", time: "55min" },
                 category: "⛽"
             },
             {
-                time: "19:45",
+                time: "19:30",
                 name: "Hikarinoyado",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/TydmYcnBHp1AoLjL8",
@@ -1081,7 +1090,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "20:00",
+                time: "19:55",
                 name: "客美多咖啡 阿南富岡店",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/KBM8W6WU4LEcQfy8A",
@@ -1089,7 +1098,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "21:09",
+                time: "21:10",
                 name: "Hikarinoyado",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/TydmYcnBHp1AoLjL8",
@@ -1105,25 +1114,25 @@ export const itineraryData: ItineraryDay[] = [
         highlight: "阿波舞、鳴門渦潮、高松還車、高速巴士回大阪。", 
         stops: [
             {
-                time: "08:00",
+                time: "07:00",
                 name: "Hikarinoyado",
                 durationLabel: "",
                 transport: { mode: "🚗", time: "45min" },
                 category: "🛏️"
             },
             {
-                time: "08:45",
+                time: "08:00",
                 name: "ローソン 徳島西大工町二丁目店",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/1AEokw2myuvtHDes8",
                 note: "備註：\n🅿ローソン附設\n📝Map Code：56 260 175*22\n💴免費",
-                transport: { mode: "🚗", time: "1min" },
+                transport: { mode: "🚗+🚶", time: "2min" },
                 category: "🏪"
             },
             {
                 time: "09:00",
                 name: "阿波おどり会館",
-                durationLabel: "(停留 01時00分)",
+                durationLabel: "(停留 01時30分)",
                 mapUrl: "https://maps.app.goo.gl/NRG8a1A8ZvgJ6Ywi9",
                 note: "備註：\n🅿パークワン西山手\n📝Map Code：56 260 052*20\n💴¥100/20min",
                 parkingUrl: "https://maps.app.goo.gl/JzsooL9Y7yK7wH9f6",
@@ -1131,19 +1140,19 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛍️"
             },
             {
-                time: "11:00",
+                time: "11:10",
                 name: "うずしお観潮船",
-                durationLabel: "(停留 01時00分)",
+                durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/acgeUcJ4j77CrEm18",
-                note: "備註：\n🅿うずしお観潮船 マイカー駐車場\n📝Map Code：106 210 212*81\n💴免費",
+                note: "備註：\n📝11:40發船\n💴遊艇：¥2000/人\n🅿うずしお観潮船 マイカー駐車場\n📝Map Code：106 210 212*81\n💴免費",
                 parkingUrl: "https://maps.app.goo.gl/kRL3c7SQHvqayrGg8",
                 transport: { mode: "🚗", time: "1hr40min" },
-                category: "🛍️"
+                category: "🛥️"
             },
             {
-                time: "13:40",
+                time: "14:00",
                 name: "ENEOS セルフ城東SS",
-                durationLabel: "(停留 00時30分)",
+                durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/GVmtkeKzZs4UmExE8",
                 note: "備註：\n📝Map Code：60 637 301*57\n📝レギュラー(紅色)",
                 transport: { mode: "🚗", time: "5min" },
@@ -1177,7 +1186,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🚏"
             },
             {
-                time: "18:44",
+                time: "18:50",
                 name: "大阪難波ELLY-one",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/LtKsVRVXiNFDwqmU6",
@@ -1185,7 +1194,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "19:26",
+                time: "19:25",
                 name: "なんばマルイ",
                 durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/ocPpbu46CYQh5Ad78",
@@ -1241,7 +1250,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "09:15",
+                time: "09:39",
                 name: "南海難波",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/FqjshYKq5CnPxBDT7",
@@ -1250,7 +1259,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🚉"
             },
             {
-                time: "10:09",
+                time: "10:28",
                 name: "関西空港駅",
                 durationLabel: "",
                 transport: { mode: "🚶", time: "10分" },
