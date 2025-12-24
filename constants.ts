@@ -744,21 +744,21 @@ export const itineraryData: ItineraryDay[] = [
                 name: "琴平公園駐車場",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/ia34DVa5jsSGzjsz9",
-                transport: { mode: "🚗", time: "10min" },
+                transport: { mode: "🚗", time: "1hr40min" },
                 category: "🅿"
             },
             {
-                time: "11:40",
+                time: "13:20",
                 name: "栄光酒造",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/wViy53FWWiFaidcq8",
                 note: "備註：\n📝Map Code：53 352 757*26\n🅿酒廠附設\n💴免費",
-                specialUrl: "https://maps.app.goo.gl/T6sLeePwZoBE7g3TA",
+                parkingUrl: "https://maps.app.goo.gl/WfhATvMeJdr38tUS6",
                 transport: { mode: "🚗", time: "10min" },
                 category: "🛍️"
             },
             {
-                time: "13:00",
+                time: "14:30",
                 name: "湯山郵便局",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/qDXe3LUeBdWZh946A",
@@ -767,7 +767,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🏣"
             },
             {
-                time: "14:20",
+                time: "15:40",
                 name: "放生園",
                 durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/fkBKoFgqQCRoAUCT9",
@@ -777,7 +777,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "📷"
             },
             {
-                time: "14:35",
+                time: "16:00",
                 name: "坊っちゃん列車",
                 durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/yupEvQoxeLs9xfRS7",
@@ -785,7 +785,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "📷"
             },
             {
-                time: "14:50",
+                time: "16:20",
                 name: "愛媛の食卓1970",
                 durationLabel: "(停留 00時30分)",
                 mapUrl: "https://maps.app.goo.gl/qYfHfWUgVj9Y4tX69",
@@ -793,7 +793,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "15:20",
+                time: "16:55",
                 name: "つぼや菓子舗",
                 durationLabel: "(停留 00時30分)",
                 mapUrl: "https://maps.app.goo.gl/88fBM54ZDjnqmqiSA",
@@ -802,7 +802,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "16:00",
+                time: "17:30",
                 name: "道後温泉別館 飛鳥乃湯泉",
                 durationLabel: "(停留 01時30分)",
                 mapUrl: "https://maps.app.goo.gl/jooFV8dHv4xKc8Yu6",
@@ -811,7 +811,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "♨️"
             },
             {
-                time: "17:35",
+                time: "19:05",
                 name: "ローソン 松山道後駅前店",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/r3kVxL85DchSFPhp7",
@@ -819,7 +819,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🏪"
             },
             {
-                time: "18:10",
+                time: "19:35",
                 name: "エコロパーク 道後温泉前第1駐車場",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/MATR6qjhJByNJXEUA",
@@ -827,7 +827,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🅿"
             },
             {
-                time: "18:30",
+                time: "20:00",
                 name: "木の家ゲストハウス松山本館",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/bHZsfw6WmcXYgKHm7",
@@ -836,7 +836,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🛏️"
             },
             {
-                time: "19:00",
+                time: "20:20",
                 name: "丸源拉麵",
                 durationLabel: "(停留 01時00分)",
                 mapUrl: "https://maps.app.goo.gl/QakGxiXS8ztEryWh7",
@@ -844,7 +844,7 @@ export const itineraryData: ItineraryDay[] = [
                 category: "🍽️"
             },
             {
-                time: "20:15",
+                time: "21:30",
                 name: "木の家ゲストハウス松山本館",
                 durationLabel: "",
                 mapUrl: "https://maps.app.goo.gl/bHZsfw6WmcXYgKHm7",
