@@ -530,7 +530,7 @@ export const itineraryData: ItineraryDay[] = [
             },
             {
                 time: "20:00",
-                name: "325番地",
+                name: "arigatouya 3 minutes by car to C",
                 durationLabel: "(停留 00時15分)",
                 mapUrl: "https://maps.app.goo.gl/qKSvDzaZz5FvERfr9",
                 note: "備註：\n📝Map Code：77 392 568*62",
