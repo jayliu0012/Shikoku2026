@@ -806,7 +806,7 @@ export const itineraryData: ItineraryDay[] = [
                 name: "道後温泉別館 飛鳥乃湯泉",
                 durationLabel: "(停留 01時30分)",
                 mapUrl: "https://maps.app.goo.gl/jooFV8dHv4xKc8Yu6",
-                note: "備註：\n💴門票：¥1280/人\n💴租借：毛巾¥100||浴巾¥300||置物櫃¥100",
+                note: "備註：\n💴門票：¥1280/人\n💴租借：毛巾¥100||浴巾¥300||置物櫃¥100\n📝人孔蓋卡",
                 transport: { mode: "🚶", time: "5min" },
                 category: "♨️"
             },
@@ -1134,7 +1134,7 @@ export const itineraryData: ItineraryDay[] = [
                 name: "阿波おどり会館",
                 durationLabel: "(停留 01時30分)",
                 mapUrl: "https://maps.app.goo.gl/NRG8a1A8ZvgJ6Ywi9",
-                note: "備註：\n🅿パークワン西山手\n📝Map Code：56 260 052*20\n💴¥100/20min",
+                note: "備註：\n🅿パークワン西山手\n📝Map Code：56 260 052*20\n💴¥100/20min\n📝人孔蓋卡",
                 parkingUrl: "https://maps.app.goo.gl/JzsooL9Y7yK7wH9f6",
                 transport: { mode: "🚗", time: "35min" },
                 category: "🛍️"
