@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   ChevronDown, ChevronRight, PlaneIcon, MapIcon, MenuIcon, SquareCheckIcon, 
@@ -523,6 +524,22 @@ const SurvivalGuideContent: React.FC<{ setSubView: (v: string | null) => void }>
                 🆘 生存指南注意事項
             </h2>
 
+            {/* Coupon Bundle Button */}
+            <div className="mb-6">
+                <a 
+                    href="https://www.pac-group.net/index.php?pp=coupon" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-full bg-[#d15b47] text-white font-bold py-4 rounded-xl shadow-lg hover:bg-opacity-90 transition duration-300 active:scale-95"
+                >
+                    <TicketIcon className="w-6 h-6 mr-2 text-white" />
+                    <span className="text-lg">優惠券懶人包</span>
+                </a>
+                <p className="text-xs text-gray-500 text-center mt-2">
+                    點擊前往查看各式藥妝與電器折扣券
+                </p>
+            </div>
+
             {/* Postcards */}
             <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-[#d15b47] mb-4">
                 <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
@@ -973,7 +990,7 @@ const ShikokuInfoContent: React.FC<{ setSubView: (v: string | null) => void }> =
         {
             region: '高知 (Kochi)',
             temp: '10°C - 19°C',
-            advice: '四國最溫暖的地區。白天可能只需長袖襯衫，但面對太平洋水氣重，建議隨身攜帶摺疊傘或具防撥水功能的外套。',
+            advice: '四國最溫暖的地區。白天可能只需長袖襯衫，但面對太平洋水氣重，建議隨身攜帶摺疊傘 or 具防撥水功能的外套。',
             icon: '🐳'
         }
     ];
@@ -1172,7 +1189,8 @@ const MenuButton: React.FC<{ icon: React.ReactNode, label: string, onClick: () =
 );
 
 
-const MenuPage: React.FC<{ setCurrentPage: (page: string) => void }> = ({ setCurrentPage }) => {
+// Fixed error: Removed unused setCurrentPage prop from MenuPage component definition.
+const MenuPage: React.FC = () => {
     const [subView, setSubView] = useState<string | null>(null);
 
     // Render subviews based on state
