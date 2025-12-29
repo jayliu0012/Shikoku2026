@@ -556,7 +556,7 @@ const SurvivalGuideContent: React.FC<{ setSubView: (v: string | null) => void }>
                 <h3 className="text-lg font-bold text-[#3c3c3c] mb-3 flex items-center">
                     📍 Google Map 定位分享
                 </h3>
-                <div className="bg-gray-100 p-3 rounded-lg text-sm text-[#3c3c3c] font-medium">
+                <div className="bg-gray-100 p-3 rounded-lg text-base text-[#3c3c3c] font-medium">
                     人像圖示 → 位置資訊分享 → 分享位置 → 複製連結
                 </div>
             </div>
@@ -569,29 +569,29 @@ const SurvivalGuideContent: React.FC<{ setSubView: (v: string | null) => void }>
                 <div className="space-y-4">
                     <div>
                         <p className="font-bold text-[#3c3c3c] text-base">全球海外急難救助 (國泰)</p>
-                        <p className="text-sm text-[#757575] mb-1">電話：+886-2-27551258</p>
+                        <p className="text-base text-[#757575] mb-1">電話：+886-2-27551258</p>
                         <div className="mt-1">
-                            <label className="text-xs font-bold text-[#98c187] uppercase">保險單號</label>
+                            <label className="text-base font-bold text-[#98c187] uppercase">保險單號</label>
                             <input 
                                 type="text" 
                                 value={cathayPolicy}
                                 onChange={(e) => setCathayPolicy(e.target.value)}
                                 placeholder="輸入保險單號..."
-                                className="w-full mt-1 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-mono text-[#3c3c3c] focus:outline-none focus:ring-2 focus:ring-[#98c187] transition"
+                                className="w-full mt-1 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-base font-mono text-[#3c3c3c] focus:outline-none focus:ring-2 focus:ring-[#98c187] transition"
                             />
                         </div>
                     </div>
                     <div className="pt-3 border-t border-gray-100">
                         <p className="font-bold text-[#3c3c3c] text-base">東京海上日動</p>
-                        <p className="text-sm text-[#757575] mb-1">電話：+81-3-67582444</p>
+                        <p className="text-base text-[#757575] mb-1">電話：+81-3-67582444</p>
                         <div className="mt-1">
-                            <label className="text-xs font-bold text-[#98c187] uppercase">保險單號</label>
+                            <label className="text-base font-bold text-[#98c187] uppercase">保險單號</label>
                             <input 
                                 type="text" 
                                 value={tokioPolicy}
                                 onChange={(e) => setTokioPolicy(e.target.value)}
                                 placeholder="輸入保險單號..."
-                                className="w-full mt-1 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-mono text-[#3c3c3c] focus:outline-none focus:ring-2 focus:ring-[#98c187] transition"
+                                className="w-full mt-1 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-base font-mono text-[#3c3c3c] focus:outline-none focus:ring-2 focus:ring-[#98c187] transition"
                             />
                         </div>
                     </div>
