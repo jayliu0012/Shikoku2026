@@ -3,7 +3,7 @@
   "name": "2026 四國自駕遊儀表板",
   "short_name": "四國2026",
   "description": "2026 四國 9 日自駕旅遊協同規劃工具",
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f0f4f6",
   "theme_color": "#2b6e90",
