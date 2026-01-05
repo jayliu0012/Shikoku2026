@@ -1,29 +1,27 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
+import App from './App';
 
 const rootElement = document.getElementById('root');
-if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
+if (!rootElement) {
+  throw new Error("Could not find root element to mount to");
 }
 
-// 註冊 Service Worker
+const root = ReactDOM.createRoot(rootElement);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// 使用絕對路徑註冊 SW
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    // 自動判斷是否在 GitHub 子目錄下
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    const swPath = isGitHubPages ? '/Shikoku2026/sw.js' : './sw.js';
-    
-    navigator.serviceWorker.register(swPath).then(registration => {
-      console.log('SW registered on:', swPath);
-    }).catch(error => {
-      console.error('SW registration failed:', error);
+    navigator.serviceWorker.register('/sw.js').then(registration => {
+      console.log('SW registered: ', registration);
+    }).catch(registrationError => {
+      console.log('SW registration failed: ', registrationError);
     });
   });
 }
