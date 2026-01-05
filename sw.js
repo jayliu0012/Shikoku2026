@@ -1,10 +1,11 @@
 
-const CACHE_NAME = 'shikoku-v2';
+const CACHE_NAME = 'shikoku-v3';
 
 // 使用相對路徑緩存文件
 const urlsToCache = [
   './',
-  './index.html'
+  './index.html',
+  './manifest.json'
 ];
 
 self.addEventListener('install', event => {
@@ -26,7 +27,7 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  // 採用網路優先策略
+  // 採用網路優先策略，若失敗則回傳快取
   event.respondWith(
     fetch(event.request).catch(() => {
       return caches.match(event.request);

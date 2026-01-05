@@ -686,7 +686,7 @@ const CollapsibleSection: React.FC<{
 const DrivingGuideContent: React.FC<{ setSubView: (v: string | null) => void }> = ({ setSubView }) => (
     <div className="p-4 max-w-lg mx-auto">
         <button
-            onClick={setSubView.bind(null, null)}
+            onClick={() => setSubView(null)}
             className="flex items-center text-[#2b6e90] font-semibold mb-6 p-2 rounded-full hover:bg-white transition text-sm"
         >
             <ChevronDown className="w-4 h-4 mr-1 transform rotate-90" />
@@ -959,7 +959,12 @@ const ShikokuInfoContent: React.FC<{ setSubView: (v: string | null) => void }> =
                 const js = document.createElement('script');
                 js.id = scriptId;
                 js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
-                fjs.parentNode?.insertBefore(js, fjs);
+                // Defensive check: ensure fjs exists and has a parent
+                if (fjs && fjs.parentNode) {
+                  fjs.parentNode.insertBefore(js, fjs);
+                } else {
+                  document.head.appendChild(js);
+                }
             } else if ((window as any).__TOMORROW__) {
                 (window as any).__TOMORROW__.renderWidget();
             }
@@ -1189,7 +1194,6 @@ const MenuButton: React.FC<{ icon: React.ReactNode, label: string, onClick: () =
 );
 
 
-// Fixed error: Removed unused setCurrentPage prop from MenuPage component definition.
 const MenuPage: React.FC = () => {
     const [subView, setSubView] = useState<string | null>(null);
 
