@@ -1,10 +1,9 @@
 
-const CACHE_NAME = 'shikoku-v2';
-
-// 初始僅緩存必備文件
+const CACHE_NAME = 'shikoku-v4';
 const urlsToCache = [
-  '/',
-  '/index.html'
+  './',
+  './index.html',
+  './manifest.json'
 ];
 
 self.addEventListener('install', event => {
@@ -17,16 +16,18 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.filter(name => name !== CACHE_NAME).map(name => caches.delete(name))
-      );
-    })
+    Promise.all([
+      caches.keys().then(cacheNames => {
+        return Promise.all(
+          cacheNames.filter(name => name !== CACHE_NAME).map(name => caches.delete(name))
+        );
+      }),
+      self.clients.claim() // 立即接管所有頁面
+    ])
   );
 });
 
 self.addEventListener('fetch', event => {
-  // 採用網路優先策略，避免白畫面
   event.respondWith(
     fetch(event.request).catch(() => {
       return caches.match(event.request);
