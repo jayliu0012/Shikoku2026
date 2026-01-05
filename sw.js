@@ -1,7 +1,5 @@
 
-const CACHE_NAME = 'shikoku-v3';
-
-// 使用相對路徑緩存文件
+const CACHE_NAME = 'shikoku-v4';
 const urlsToCache = [
   './',
   './index.html',
@@ -18,16 +16,18 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.filter(name => name !== CACHE_NAME).map(name => caches.delete(name))
-      );
-    })
+    Promise.all([
+      caches.keys().then(cacheNames => {
+        return Promise.all(
+          cacheNames.filter(name => name !== CACHE_NAME).map(name => caches.delete(name))
+        );
+      }),
+      self.clients.claim() // 立即接管所有頁面
+    ])
   );
 });
 
 self.addEventListener('fetch', event => {
-  // 採用網路優先策略，若失敗則回傳快取
   event.respondWith(
     fetch(event.request).catch(() => {
       return caches.match(event.request);
