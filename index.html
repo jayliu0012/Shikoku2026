@@ -12,43 +12,49 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="四國2026" />
     
-    <link rel="apple-touch-icon" href="/whale.png" />
-    <link rel="icon" type="image/png" href="/whale.png" />
+    <!-- 使用 RAW 原始圖片連結 -->
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/jayliu0012/Shikoku2026/main/whale.png" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/jayliu0012/Shikoku2026/main/whale.png" />
     
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="manifest.json" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      ::-webkit-scrollbar { width: 6px; height: 6px; }
-      ::-webkit-scrollbar-track { background: #f1f1f1; }
-      ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
-      body { overscroll-behavior-y: none; }
-      #root:empty::before {
-        content: "正在載入旅遊儀表板...";
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 80vh;
-        color: #2b6e90;
-        font-family: sans-serif;
-        font-weight: bold;
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #999;
+      }
+      /* Prevent elastic bounce on mobile */
+      body {
+        overscroll-behavior-y: none;
       }
     </style>
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/",
     "vite": "https://esm.sh/vite@^7.3.0",
     "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
-</head>
+  </head>
   <body class="bg-gray-50 text-gray-900">
     <div id="root"></div>
-    <!-- Vite 專案中，src 應該指向開發環境的路徑 -->
-    <script type="module" src="./index.tsx"></script>
+    <script type="module" src="index.tsx"></script>
   </body>
 </html>
