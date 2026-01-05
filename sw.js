@@ -1,10 +1,10 @@
 
 const CACHE_NAME = 'shikoku-v2';
 
-// 初始僅緩存必備文件
+// 使用相對路徑緩存文件
 const urlsToCache = [
-  '/',
-  '/index.html'
+  './',
+  './index.html'
 ];
 
 self.addEventListener('install', event => {
@@ -26,7 +26,7 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  // 採用網路優先策略，避免白畫面
+  // 採用網路優先策略
   event.respondWith(
     fetch(event.request).catch(() => {
       return caches.match(event.request);
